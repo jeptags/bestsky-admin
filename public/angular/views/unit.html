@@ -1,0 +1,82 @@
+<section class="unit-page height-100vh" ng-controller="UnitController">
+    <div class="d-flex align-items-stretch">
+        <div ng-include="'angular/views/sidebar.html'">
+        </div>
+        <div class="page-holder w-100 d-flex flex-wrap">
+            <div class="container-fluid px-xl-5">
+
+                <section class="mt-5">
+                    <div class="row mb-4">
+                        <div class="col-lg-12 mb-4 mb-lg-0">
+                            <div class="card">
+                                <div class="card-header p-3">
+                                    <h2 class="h6 text-uppercase mb-0">
+                                        <span>Unit Details</span>
+                                        <span class="float-right pointer" ng-click="unitObj.add.openModal()">
+                                            <i class="fa fa-plus-square" aria-hidden="true"></i>
+                                        </span>
+                                    </h2>
+                                </div>
+                                <div class="card-body account pt-2">
+                                    <div class="row mt-2">
+                                        <table class="table table-striped card-text mt-4" ng-if="unitObj.data.length && !unitObj.isloading">
+                                            <thead>
+                                                <tr>
+                                                    <th>
+                                                        #
+                                                    </th>
+                                                    <th>
+                                                        Actual Name
+                                                    </th>
+                                                    <th>
+                                                        Short Name
+                                                    </th> 
+                                                    <th>
+                                                        Edit
+                                                    </th>
+                                                    <th>
+                                                        Delete
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr ng-repeat="UnitRow in unitObj.data">
+                                                    <th scope="row">
+                                                        {{$index + 1}}
+                                                    </th>
+                                                    <td>
+                                                        {{UnitRow.actual_name}}
+                                                    </td>
+                                                    <td>
+                                                        {{UnitRow.short_name}}
+                                                    </td> 
+                                                    <td>
+                                                        <i class="fa fa-pencil-square pointer" aria-hidden="true" ng-click="unitObj.add.openModal(UnitRow)"></i>
+                                                    </td>
+                                                    <td>
+                                                        <i class="fa fa-trash pointer" ng-click="unitObj.remove.submit(UnitRow, 'units')"></i>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+                                        <div class="col-md-12 text-center" ng-if="unitObj.isloading">
+                                            <i class="fa fa-spinner fa-spin fa-2x fa-fw"></i>
+                                        </div>
+
+                                        <div class="col-md-12 text-center" ng-if="!unitObj.isloading && !unitObj.data.length">
+                                            No Data.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+
+    <div ng-include="'angular/views/modal.html'"></div>
+</section>

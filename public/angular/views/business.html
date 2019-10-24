@@ -1,0 +1,118 @@
+<section class="business-page height-100vh" ng-controller="BusinessController">
+    <div class="d-flex align-items-stretch">
+        <div ng-include="'angular/views/sidebar.html'">
+        </div>
+        <div class="page-holder w-100 d-flex flex-wrap">
+            <div class="container-fluid px-xl-5">
+
+                <section class="mt-5">
+                    <div class="row mb-4">
+                        <div class="col-lg-12 mb-4 mb-lg-0">
+                            <div class="card">
+                                <div class="card-header p-3">
+                                    <h2 class="h6 text-uppercase mb-0">
+                                        <span>Business Details</span>
+                                        <span class="float-right pointer" ng-click="businessObj.add.openModal()">
+                                            <i class="fa fa-plus-square" aria-hidden="true"></i>
+                                        </span>
+                                    </h2>
+                                </div>
+                                <div class="card-body account pt-2">
+                                    <div class="row mt-2">
+                                        <table class="table table-striped card-text mt-4" ng-if="businessObj.data.length && !businessObj.isloading">
+                                            <thead>
+                                                <tr>
+                                                    <th>
+                                                        #
+                                                    </th>
+                                                    <th>
+                                                        Name
+                                                    </th>
+                                                    <th>
+                                                        Start Date
+                                                    </th>  
+                                                    <th>
+                                                        Time Zone
+                                                    </th> 
+                                                     <th>
+                                                        Accounting Method
+                                                    </th>  
+                                                    <th>
+                                                        Enable Product Expiry
+                                                    </th> 
+                                                     <th>
+                                                        Expire Type
+                                                    </th>  
+                                                    <th>
+                                                        Date Format
+                                                    </th> 
+                                                    <th>
+                                                        Time Format
+                                                    </th> 
+                                                    <th>
+                                                        Edit
+                                                    </th>
+                                                    <th>
+                                                        Delete
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr ng-repeat="bussRow in businessObj.data">
+                                                    <th scope="row">
+                                                        {{$index + 1}}
+                                                    </th>
+                                                    <td>
+                                                        {{bussRow.name}}
+                                                    </td>
+                                                    <td>
+                                                        {{bussRow.start_date | date:'dd-MM-yyyy'}}
+                                                    </td> 
+                                                    <td>
+                                                        {{bussRow.time_zone}}
+                                                    </td>  
+                                                    <td>
+                                                        {{bussRow.accounting_method}}
+                                                    </td>  
+                                                    <td>
+                                                        {{bussRow.enable_product_expiry}}
+                                                    </td>  
+                                                    <td>
+                                                        {{bussRow.expiry_type}}
+                                                    </td>  
+                                                    <td>
+                                                        {{bussRow.date_format}}
+                                                    </td>  
+                                                    <td>
+                                                        {{bussRow.time_format}}
+                                                    </td>  
+                                                    <td>
+                                                        <i class="fa fa-pencil-square pointer" aria-hidden="true" ng-click="businessObj.add.openModal(bussRow)"></i>
+                                                    </td>
+                                                    <td>
+                                                        <i class="fa fa-trash pointer" ng-click="businessObj.remove.submit(bussRow, 'business')"></i>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+                                        <div class="col-md-12 text-center" ng-if="businessObj.isloading">
+                                            <i class="fa fa-spinner fa-spin fa-2x fa-fw"></i>
+                                        </div>
+
+                                        <div class="col-md-12 text-center" ng-if="!businessObj.isloading && !businessObj.data.length">
+                                            No Data.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+
+    <div ng-include="'angular/views/modal.html'"></div>
+</section>

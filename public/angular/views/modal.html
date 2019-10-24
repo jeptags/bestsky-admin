@@ -1,0 +1,2835 @@
+
+<!-- Product Details Model -->
+<div aria-hidden="true" class="modal fade text-left" data-backdrop="static" data-keyboard="false" id="productpopup" role="dialog" tabindex="-1">
+    <div class="modal-dialog modal-lg employeemodal" role="document">
+        <div class="modal-content" ng-form="productForm">
+            <div class="modal-header">
+                <h4 class="modal-title">
+                    Product Details
+                </h4>
+                <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+                    <span aria-hidden="true">
+                        ×
+                    </span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12 order-md-1">                        
+                        <div class="row">
+                            <div class="col-md-3 mb-3">
+                                <label>
+                                    Product Name 
+                                </label>
+                                <span class="required">
+                                    * 
+                                </span>
+                                <input class="form-control" name="name" ng-class="{ 'input-error': productObj.add.isSubmit && productForm.name.$error.required }" ng-model="productObj.add.model.name" required="true" type="text">
+                                </input>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label>
+                                   Select Business
+                                </label>
+                                <span class="required">
+                                    *
+                                </span>
+                                 <select class="form-control" name="business_id" ng-class="{ 'input-error': productObj.add.isSubmit && productForm.business_id.$error.required }" ng-model="productObj.add.model.business_id" ng-required="true">
+                                <option value="">
+                                    -- Select Business --
+                                </option>
+                                <option value="{{p._id}}"  ng-repeat="p in productObj.businesslist">
+                                   {{p.name}}
+                                </option>
+                                </select>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label>
+                                   Type
+                                </label>
+                                <span class="required">
+                                    *
+                                </span>
+                                 <select class="form-control" name="type" ng-class="{ 'input-error': productObj.add.isSubmit && productForm.type.$error.required }" ng-model="productObj.add.model.type" ng-required="true">
+                                <option value="">
+                                    -- Select Type --
+                                </option>
+                                <option value="Single">
+                                   Single
+                                </option>
+                                 <option value="Variable">
+                                   Variable
+                                </option>
+                                 <option value="Modifier">
+                                   Modifier
+                                </option>
+                                </select>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label>
+                                   Select Unit
+                                </label>
+                                <span class="required">
+                                    *
+                                </span>
+                                 <select class="form-control" name="unit_id" ng-class="{ 'input-error': productObj.add.isSubmit && productForm.unit_id.$error.required }" ng-model="productObj.add.model.unit_id" ng-required="true">
+                                <option value="">
+                                    -- Select Unit --
+                                </option>
+                                <option value="{{p._id}}"  ng-repeat="p in productObj.unitlist">
+                                   {{p.actual_name}}
+                                </option>
+                                </select>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label>
+                                   Select Brand
+                                </label>
+                                <span class="required">
+                                    *
+                                </span>
+                                 <select class="form-control" name="brand_id" ng-class="{ 'input-error': productObj.add.isSubmit && productForm.brand_id.$error.required }" ng-model="productObj.add.model.brand_id" ng-required="true">
+                                <option value="">
+                                    -- Select Brand --
+                                </option>
+                                <option value="{{p._id}}"  ng-repeat="p in productObj.brandlist">
+                                   {{p.name}}
+                                </option>
+                                </select>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label>
+                                   Select Category
+                                </label>
+                                <span class="required">
+                                    *
+                                </span>
+                                 <select class="form-control" name="category_id" ng-class="{ 'input-error': productObj.add.isSubmit && productForm.category_id.$error.required }" ng-model="productObj.add.model.category_id" ng-required="true">
+                                <option value="">
+                                    -- Select Category --
+                                </option>
+                                <option value="{{p._id}}"  ng-repeat="p in productObj.categorylist">
+                                   {{p.name}}
+                                </option>
+                                </select>
+                            </div>
+                             <div class="col-md-3 mb-3">
+                                <label>
+                                   Select Sub Category
+                                </label>
+                                <span class="required">
+                                    *
+                                </span>
+                                 <select class="form-control" name="sub_category_id" ng-class="{ 'input-error': productObj.add.isSubmit && productForm.sub_category_id.$error.required }" ng-model="productObj.add.model.sub_category_id" ng-required="true">
+                                <option value="">
+                                    -- Select Sub Category --
+                                </option>
+                                <option value="{{p._id}}"  ng-repeat="p in productObj.subcatlist">
+                                   {{p.Name}}
+                                </option>
+                                </select>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label>
+                                    Tax
+                                </label>
+                                <span class="required">
+                                    *
+                                </span>
+                                <input class="form-control" name="tax" ng-class="{ 'input-error': productObj.add.isSubmit && productForm.tax.$error.required }" ng-model="productObj.add.model.tax" type="number" required="true">
+                                </input>
+                            </div>
+                             <div class="col-md-3 mb-3">
+                                <label>
+                                   Tax Type
+                                </label>
+                                <span class="required">
+                                    *
+                                </span>
+                                 <select class="form-control" name="tax_type" ng-class="{ 'input-error': productObj.add.isSubmit && productForm.tax_type.$error.required }" ng-model="productObj.add.model.tax_type" ng-required="true">
+                                <option value="">
+                                    -- Select Tax Type --
+                                </option>
+                                <option value="Inclusive">
+                                   Inclusive
+                                </option>
+                                 <option value="Exclusive">
+                                   Exclusive
+                                </option>
+                                </select>
+                            </div>
+                              <div class="col-md-3 mb-3">
+                                <label>
+                                    Enable Stock
+                                </label>
+                                <span class="required">
+                                    *
+                                </span>
+                                <input class="form-control" name="enable_stock" ng-class="{ 'input-error': productObj.add.isSubmit && productForm.enable_stock.$error.required }" ng-model="productObj.add.model.enable_stock" type="number" required="true">
+                                </input>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label>
+                                    Alert Quantity
+                                </label>
+                                <span class="required">
+                                    *
+                                </span>
+                                <input class="form-control" name="alert_quantity" ng-class="{ 'input-error': productObj.add.isSubmit && productForm.alert_quantity.$error.required }" ng-model="productObj.add.model.alert_quantity" type="number" required="true">
+                                </input>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label>
+                                    Sku
+                                </label>                              
+                                <input class="form-control" name="sku" ng-class="{ 'input-error': productObj.add.isSubmit && productForm.sku.$error.required }" ng-model="productObj.add.model.sku" type="text">
+                                </input>
+                            </div>
+                             <div class="col-md-3 mb-3">
+                                <label>
+                                   Barcode Type
+                                </label>
+                                <span class="required">
+                                    *
+                                </span>
+                                 <select class="form-control" name="barcode_type" ng-class="{ 'input-error': productObj.add.isSubmit && productForm.barcode_type.$error.required }" ng-model="productObj.add.model.barcode_type" ng-required="true">
+                                <option value="">
+                                    -- Select Barcode Type --
+                                </option>
+                                <option value="C39">
+                                   C39
+                                </option>
+                                 <option value="C128">
+                                   C128
+                                </option> 
+                                <option value="EAN13">
+                                   EAN13
+                                </option> 
+                                <option value="EAN8">
+                                   EAN8
+                                </option> 
+                                <option value="UPCA">
+                                   UPCA
+                                </option>
+                                <option value="UPCE">
+                                   UPCE
+                                </option>
+                                </select>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label>
+                                    Expiry Period
+                                </label>
+                                <span class="required">
+                                    *
+                                </span>
+                                <input class="form-control" name="expiry_period" ng-class="{ 'input-error': productObj.add.isSubmit && productForm.expiry_period.$error.required }" ng-model="productObj.add.model.expiry_period" type="number" required="true">
+                                </input>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label>
+                                   Expiry Period Type
+                                </label>
+                                <span class="required">
+                                    *
+                                </span>
+                                 <select class="form-control" name="expiry_period_type" ng-class="{ 'input-error': productObj.add.isSubmit && productForm.expiry_period_type.$error.required }" ng-model="productObj.add.model.expiry_period_type" ng-required="true">
+                                <option value="">
+                                    -- Select Expiry Period Type --
+                                </option>
+                                <option value="Days">
+                                   Days
+                                </option>
+                                 <option value="Months">
+                                   Months
+                                </option> 
+                                </select>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label>
+                                    Enable Sr No
+                                </label>
+                                <span class="required">
+                                    *
+                                </span>
+                                <input class="form-control" name="enable_sr_no" ng-class="{ 'input-error': productObj.add.isSubmit && productForm.enable_sr_no.$error.required }" ng-model="productObj.add.model.enable_sr_no" type="number" required="true">
+                                </input>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label>
+                                    Weight
+                                </label>
+                                <span class="required">
+                                    *
+                                </span>
+                                <input class="form-control" name="weight" ng-class="{ 'input-error': productObj.add.isSubmit && productForm.weight.$error.required }" ng-model="productObj.add.model.weight" type="text" required="true">
+                                </input>
+                            </div>
+                             <div class="col-md-3 mb-3">
+                                <label>
+                                    Product Custom Field1
+                                </label>                              
+                                <input class="form-control" name="product_custom_field1" ng-class="{ 'input-error': productObj.add.isSubmit && productForm.product_custom_field1.$error.required }" ng-model="productObj.add.model.product_custom_field1" type="text">
+                                </input>
+                            </div>
+                             <div class="col-md-3 mb-3">
+                                <label>
+                                    Product Custom Field2
+                                </label>
+                                <input class="form-control" name="product_custom_field2" ng-class="{ 'input-error': productObj.add.isSubmit && productForm.product_custom_field2.$error.required }" ng-model="productObj.add.model.product_custom_field2" type="text">
+                                </input>
+                            </div>
+                             <div class="col-md-3 mb-3">
+                                <label>
+                                    Product Custom Field3
+                                </label>
+                                <input class="form-control" name="product_custom_field3" ng-class="{ 'input-error': productObj.add.isSubmit && productForm.product_custom_field3.$error.required }" ng-model="productObj.add.model.product_custom_field3" type="text">
+                                </input>
+                            </div>
+                             <div class="col-md-3 mb-3">
+                                <label>
+                                    Product Custom Field4
+                                </label>
+                                <input class="form-control" name="product_custom_field4" ng-class="{ 'input-error': productObj.add.isSubmit && productForm.product_custom_field4.$error.required }" ng-model="productObj.add.model.product_custom_field4" type="text">
+                                </input>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label>
+                                   Image
+                                </label>
+                                <span class="required">
+                                    *
+                                </span>
+                                <input class="form-control" name="image" ng-class="{ 'input-error': productObj.add.isSubmit && productForm.image.$error.required }" ng-model="productObj.add.model.image" type="text">
+                                </input>
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="w-100" ng-if="!productObj.add.isReqSent">
+                    <button class="btn btn-primary float-right" ng-click="productObj.add.submit(productForm)" ng-disabled="productObj.add.isReqSent" type="submit">
+                        Save
+                    </button>
+                </div>
+                <div class="w-100" ng-if="productObj.add.isReqSent">
+                    <button class="btn btn-primary float-right" disabled="">
+                        Saving...
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Confirm Model -->
+<div aria-hidden="true" class="modal fade text-left" data-backdrop="static" data-keyboard="false" id="removeProduct" role="dialog" tabindex="-1">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">
+                    Confirm Remove
+                </h4>
+                <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+                    <span aria-hidden="true">
+                        ×
+                    </span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="col-md-12 order-md-1">
+                    Are you sure you want to delete this record?
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="w-100">
+                    <button class="btn btn-primary float-right" ng-click="productObj.remove.removeData()">
+                        Yes
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Category Model -->
+<div aria-hidden="true" class="modal fade text-left" data-backdrop="static" data-keyboard="false" id="categorypopup" role="dialog" tabindex="-1">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content" ng-form="categoryForm">
+            <div class="modal-header">
+                <h4 class="modal-title">
+                    Category Details
+                </h4>
+                <button aria-label="Close" class="close" ng-click="categoryObj.add.closeModal()">
+                    <span aria-hidden="true">
+                        ×
+                    </span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="col-md-12 order-md-1">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                                <label>
+                                   Select Business
+                                </label>
+                                <span class="required">
+                                    *
+                                </span>
+                                 <select class="form-control" name="business_id" ng-class="{ 'input-error': categoryObj.add.isSubmit && categoryForm.business_id.$error.required }" ng-model="categoryObj.add.model.business_id" ng-required="true">
+                                <option value="">
+                                    -- Select Business --
+                                </option>
+                                <option value="{{p._id}}"  ng-repeat="p in categoryObj.businesslist">
+                                   {{p.name}}
+                                </option>
+                                </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label>
+                                Category Name
+                            </label>
+                            <span class="required">
+                                *
+                            </span>
+                            <input class="form-control" name="name" ng-class="{ 'input-error': categoryObj.add.isSubmit && categoryForm.name.$error.required }" ng-model="categoryObj.add.model.name" required="true" type="text">
+                            </input>
+                        </div>
+                         <div class="col-md-6 mb-3">
+                            <label>
+                                   Short Code
+                            </label>
+                            <span class="required">
+                                *
+                            </span>
+                            <input class="form-control" name="short_code" ng-class="{ 'input-error': categoryObj.add.isSubmit && categoryForm.short_code.$error.required }" ng-model="categoryObj.add.model.short_code" required="true" type="text">
+                            </input>
+                        </div>                        
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="w-100">
+                    <button class="btn btn-primary float-right" ng-click="categoryObj.add.submit(categoryForm)" ng-disabled="categoryObj.add.isReqSent" type="submit">
+                        Save
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Confirm Model -->
+<div aria-hidden="true" class="modal fade text-left" data-backdrop="static" data-keyboard="false" id="removecategoryData" role="dialog" tabindex="-1">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">
+                    Confirm Remove
+                </h4>
+                <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+                    <span aria-hidden="true">
+                        ×
+                    </span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="col-md-12 order-md-1">
+                    Are you sure you want to delete this record?
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="w-100">
+                    <button class="btn btn-primary float-right" ng-click="categoryObj.remove.removeData()">
+                        Yes
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SubCategory Model -->
+<div aria-hidden="true" class="modal fade text-left" data-backdrop="static" data-keyboard="false" id="subcategorypopup" role="dialog" tabindex="-1">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content" ng-form="subcategoryForm">
+            <div class="modal-header">
+                <h4 class="modal-title">
+                    Sub Category Details
+                </h4>
+                <button aria-label="Close" class="close" ng-click="subcategoryObj.add.closeModal()">
+                    <span aria-hidden="true">
+                        ×
+                    </span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="col-md-12 order-md-1">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                                <label>
+                                   Select Category
+                                </label>
+                                <span class="required">
+                                    *
+                                </span>
+                                 <select class="form-control" name="CategoryId" ng-class="{ 'input-error': subcategoryObj.add.isSubmit && subcategoryForm.CategoryId.$error.required }" ng-model="subcategoryObj.add.model.CategoryId" ng-required="true">
+                                <option value="">
+                                    -- Select Category --
+                                </option>
+                                <option value="{{p._id}}"  ng-repeat="p in subcategoryObj.categorylist">
+                                   {{p.name}}
+                                </option>
+                                </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label>
+                               Sub Category Name
+                            </label>
+                            <span class="required">
+                                *
+                            </span>
+                            <input class="form-control" name="Name" ng-class="{ 'input-error': subcategoryObj.add.isSubmit && subcategoryForm.Name.$error.required }" ng-model="subcategoryObj.add.model.Name" required="true" type="text">
+                            </input>
+                        </div>
+                        <div class="col-md-12 mb-3">
+                            <label>
+                                Description
+                            </label>
+                            <input class="form-control" name="Description" ng-class="{ 'input-error': subcategoryObj.add.isSubmit && subcategoryForm.Description.$error.required }" ng-model="subcategoryObj.add.model.Description" type="text">
+                            </input>
+                        </div>
+                         <div class="col-md-12 mb-3">
+                            <label>
+                                Image
+                            </label>
+                            <input class="form-control" name="Description" ng-class="{ 'input-error': subcategoryObj.add.isSubmit && subcategoryForm.Description.$error.required }" ng-model="subcategoryObj.add.model.Description" type="text">
+                            </input>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="w-100">
+                    <button class="btn btn-primary float-right" ng-click="subcategoryObj.add.submit(subcategoryForm)" ng-disabled="subcategoryObj.add.isReqSent" type="submit">
+                        Save
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Confirm Model -->
+<div aria-hidden="true" class="modal fade text-left" data-backdrop="static" data-keyboard="false" id="removesubcategoryData" role="dialog" tabindex="-1">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">
+                    Confirm Remove
+                </h4>
+                <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+                    <span aria-hidden="true">
+                        ×
+                    </span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="col-md-12 order-md-1">
+                    Are you sure you want to delete this record?
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="w-100">
+                    <button class="btn btn-primary float-right" ng-click="subcategoryObj.remove.removeData()">
+                        Yes
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Store Model -->
+<div aria-hidden="true" class="modal fade text-left" data-backdrop="static" data-keyboard="false" id="storepopup" role="dialog" tabindex="-1">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content" ng-form="storeForm">
+            <div class="modal-header">
+                <h4 class="modal-title">
+                    Store Details
+                </h4>
+                <button aria-label="Close" class="close" ng-click="storeObj.add.closeModal()">
+                    <span aria-hidden="true">
+                        ×
+                    </span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="col-md-12 order-md-1">
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                                <label>
+                                   Select Company
+                                </label>
+                                <span class="required">
+                                    *
+                                </span>
+                                 <select class="form-control" name="CompanyId" ng-class="{ 'input-error': storeObj.add.isSubmit && storeForm.CompanyId.$error.required }" ng-model="storeObj.add.model.CompanyId" required="true">
+                                <option value="">
+                                    -- Select Company --
+                                </option>
+                                <option value="{{p._id}}"  ng-repeat="p in storeObj.categorylist">
+                                   {{p.CompanyName}}
+                                </option>
+                                </select>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label>
+                                Name
+                            </label>
+                            <span class="required">
+                                * 
+                            </span>
+                             <input class="form-control" name="Name" ng-class="{ 'input-error': storeObj.add.isSubmit && storeForm.Name.$error.required }" ng-model="storeObj.add.model.Name" required="true" type="text">
+                            </input>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label>
+                                Address
+                            </label>
+                            <span class="required">
+                                *
+                            </span>
+                            <input class="form-control" name="Address" ng-class="{ 'input-error': storeObj.add.isSubmit && storeForm.Address.$error.required }" ng-model="storeObj.add.model.Address" required="true" type="text">
+                            </input>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label>
+                                Posts Code
+                            </label>
+                            <span class="required">
+                                *
+                            </span>
+                            <input class="form-control" name="Postscode" ng-class="{ 'input-error': storeObj.add.isSubmit && storeForm.Postscode.$error.required }" ng-model="storeObj.add.model.Postscode" required="true" type="number">
+                            </input>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label>
+                                City
+                            </label>
+                            <span class="required">
+                                *
+                            </span>
+                            <input class="form-control" name="City" ng-class="{ 'input-error': storeObj.add.isSubmit && storeForm.City.$error.required }" ng-model="storeObj.add.model.City" required="true" type="text">
+                            </input>
+                        </div>
+                         <div class="col-md-4 mb-3">
+                            <label>
+                                Country
+                            </label>
+                            <span class="required">
+                                *
+                            </span>
+                            <input class="form-control" name="Country" ng-class="{ 'input-error': storeObj.add.isSubmit && storeForm.Country.$error.required }" ng-model="storeObj.add.model.Country" required="true" type="text">
+                            </input>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label>
+                                Region
+                            </label>
+                            <span class="required">
+                                *
+                            </span>
+                            <input class="form-control" name="Region" ng-class="{ 'input-error': storeObj.add.isSubmit && storeForm.Region.$error.required }" ng-model="storeObj.add.model.Region" required="true" type="text">
+                            </input>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label>
+                                Phone
+                            </label>
+                            <span class="required">
+                                *
+                            </span>
+                            <input class="form-control" name="Phone" ng-class="{ 'input-error': storeObj.add.isSubmit && storeForm.Phone.$error.required }" ng-model="storeObj.add.model.Phone" required="true" type="number">
+                            </input>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label>
+                                Fax
+                            </label>
+                            <input class="form-control" name="Fax" ng-class="{ 'input-error': storeObj.add.isSubmit && storeForm.Fax.$error.required }" ng-model="storeObj.add.model.Fax" type="text">
+                            </input>
+                        </div>
+                         <div class="col-md-4 mb-3">
+                            <label>
+                                GEOLat
+                            </label>
+                            <span class="required">
+                                *
+                            </span>
+                            <input class="form-control" name="GEOLat" ng-class="{ 'input-error': storeObj.add.isSubmit && storeForm.GEOLat.$error.required }" ng-model="storeObj.add.model.GEOLat" required="true" type="text">
+                            </input>
+                        </div>
+                         <div class="col-md-4 mb-3">
+                            <label>
+                                GEOLong
+                            </label>
+                            <span class="required">
+                                *
+                            </span>
+                            <input class="form-control" name="GEOLong" ng-class="{ 'input-error': storeObj.add.isSubmit && storeForm.GEOLong.$error.required }" ng-model="storeObj.add.model.GEOLong" required="true" type="text">
+                            </input>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="w-100">
+                    <button class="btn btn-primary float-right" ng-click="storeObj.add.submit(storeForm)" ng-disabled="storeObj.add.isReqSent" type="submit">
+                        Save
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Confirm Model -->
+<div aria-hidden="true" class="modal fade text-left" data-backdrop="static" data-keyboard="false" id="removestoreData" role="dialog" tabindex="-1">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">
+                    Confirm Remove
+                </h4>
+                <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+                    <span aria-hidden="true">
+                        ×
+                    </span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="col-md-12 order-md-1">
+                    Are you sure you want to delete this record?
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="w-100">
+                    <button class="btn btn-primary float-right" ng-click="storeObj.remove.removeData()">
+                        Yes
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Company Model -->
+<div aria-hidden="true" class="modal fade text-left" data-backdrop="static" data-keyboard="false" id="companypopup" role="dialog" tabindex="-1">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content" ng-form="companyForm">
+            <div class="modal-header">
+                <h4 class="modal-title">
+                    Company Details
+                </h4>
+                <button aria-label="Close" class="close" ng-click="companyObj.add.closeModal()">
+                    <span aria-hidden="true">
+                        ×
+                    </span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="col-md-12 order-md-1">
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                                <label>
+                                   Select Business
+                                </label>
+                                <span class="required">
+                                    *
+                                </span>
+                                 <select class="form-control" name="BusinessID" ng-class="{ 'input-error': companyObj.add.isSubmit && companyForm.BusinessID.$error.required }" ng-model="companyObj.add.model.BusinessID" ng-required="true">
+                                <option value="">
+                                    -- Select Business --
+                                </option>
+                                <option value="{{p._id}}"  ng-repeat="p in companyObj.businesslist">
+                                   {{p.name}}
+                                </option>
+                                </select>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label>
+                                Company Name
+                            </label>
+                            <span class="required">
+                                *
+                            </span>
+                            <input class="form-control" name="CompanyName" ng-class="{ 'input-error': companyObj.add.isSubmit && companyForm.CompanyName.$error.required }" ng-model="companyObj.add.model.CompanyName" required="true" type="text">
+                            </input>
+                        </div>
+                         <div class="col-md-4 mb-3">
+                            <label>
+                                Owner Name
+                            </label>
+                            <span class="required">
+                                *
+                            </span>
+                            <input class="form-control" name="OwnerName" ng-class="{ 'input-error': companyObj.add.isSubmit && companyForm.OwnerName.$error.required }" ng-model="companyObj.add.model.OwnerName" required="true" type="text">
+                            </input>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label>
+                                Address
+                            </label>
+                            <span class="required">
+                                *
+                            </span>
+                            <input class="form-control" name="Address" ng-class="{ 'input-error': companyObj.add.isSubmit && companyForm.Address.$error.required }" ng-model="companyObj.add.model.Address" required="true" type="text">
+                            </input>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label>
+                                Posts Code
+                            </label>
+                            <span class="required">
+                                *
+                            </span>
+                            <input class="form-control" name="Postscode" ng-class="{ 'input-error': companyObj.add.isSubmit && companyForm.Postscode.$error.required }" ng-model="companyObj.add.model.Postscode" required="true" type="number">
+                            </input>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label>
+                                City
+                            </label>
+                            <span class="required">
+                                *
+                            </span>
+                            <input class="form-control" name="City" ng-class="{ 'input-error': companyObj.add.isSubmit && companyForm.City.$error.required }" ng-model="companyObj.add.model.City" required="true" type="text">
+                            </input>
+                        </div>
+                         <div class="col-md-4 mb-3">
+                            <label>
+                                Country
+                            </label>
+                            <span class="required">
+                                *
+                            </span>
+                            <input class="form-control" name="Country" ng-class="{ 'input-error': companyObj.add.isSubmit && companyForm.Country.$error.required }" ng-model="companyObj.add.model.Country" required="true" type="text">
+                            </input>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label>
+                                Region
+                            </label>
+                            <span class="required">
+                                *
+                            </span>
+                            <input class="form-control" name="Region" ng-class="{ 'input-error': companyObj.add.isSubmit && companyForm.Region.$error.required }" ng-model="companyObj.add.model.Region" required="true" type="text">
+                            </input>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label>
+                                Phone
+                            </label>
+                            <span class="required">
+                                *
+                            </span>
+                            <input class="form-control" name="Phone" ng-class="{ 'input-error': companyObj.add.isSubmit && companyForm.Phone.$error.required }" ng-model="companyObj.add.model.Phone" required="true" type="number">
+                            </input>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label>
+                                Fax
+                            </label>
+                            <input class="form-control" name="Fax" ng-class="{ 'input-error': companyObj.add.isSubmit && companyForm.Fax.$error.required }" ng-model="companyObj.add.model.Fax" type="text">
+                            </input>
+                        </div>
+                         <div class="col-md-4 mb-3">
+                            <label>
+                                Email
+                            </label>
+                            <span class="required">
+                                *
+                            </span>
+                            <input class="form-control" name="Email" ng-class="{ 'input-error': companyObj.add.isSubmit && companyForm.Email.$error.required }" ng-model="companyObj.add.model.Email" type="text" required="true">
+                            </input>
+                        </div>
+                         <div class="col-md-4 mb-3">
+                            <label>
+                                Password
+                            </label>
+                            <span class="required">
+                                *
+                            </span>
+                            <input class="form-control" name="Password" ng-class="{ 'input-error': companyObj.add.isSubmit && companyForm.Password.$error.required }" ng-model="companyObj.add.model.Password" type="Password" required="true">
+                            </input>
+                        </div>
+                         <div class="col-md-4 mb-3">
+                            <label>
+                                GEOLat
+                            </label>
+                            <input class="form-control" name="GEOLat" ng-class="{ 'input-error': companyObj.add.isSubmit && companyForm.GEOLat.$error.required }" ng-model="companyObj.add.model.GEOLat" type="text">
+                            </input>
+                        </div>
+                         <div class="col-md-4 mb-3">
+                            <label>
+                                GEOLong
+                            </label>                            
+                            <input class="form-control" name="GEOLong" ng-class="{ 'input-error': companyObj.add.isSubmit && companyForm.GEOLong.$error.required }" ng-model="companyObj.add.model.GEOLong" type="text">
+                            </input>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label>
+                                Promotion Code
+                            </label>
+                            <input class="form-control" name="PromotionCode" ng-class="{ 'input-error': companyObj.add.isSubmit && companyForm.PromotionCode.$error.required }" ng-model="companyObj.add.model.PromotionCode" type="pass">
+                            </input>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="w-100">
+                    <button class="btn btn-primary float-right" ng-click="companyObj.add.submit(companyForm)" ng-disabled="companyObj.add.isReqSent" type="submit">
+                        Save
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Confirm Model -->
+<div aria-hidden="true" class="modal fade text-left" data-backdrop="static" data-keyboard="false" id="removecompanyData" role="dialog" tabindex="-1">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">
+                    Confirm Remove
+                </h4>
+                <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+                    <span aria-hidden="true">
+                        ×
+                    </span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="col-md-12 order-md-1">
+                    Are you sure you want to delete this record?
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="w-100">
+                    <button class="btn btn-primary float-right" ng-click="companyObj.remove.removeData()">
+                        Yes
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Tex Model -->
+<div aria-hidden="true" class="modal fade text-left" data-backdrop="static" data-keyboard="false" id="texpopup" role="dialog" tabindex="-1">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content" ng-form="texForm">
+            <div class="modal-header">
+                <h4 class="modal-title">
+                    Tax Rate
+                </h4>
+                <button aria-label="Close" class="close" ng-click="texObj.add.closeModal()">
+                    <span aria-hidden="true">
+                        ×
+                    </span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="col-md-12 order-md-1">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label>
+                                Name
+                            </label>
+                            <span class="required">
+                                *
+                            </span>
+                            <input class="form-control" name="name" ng-class="{ 'input-error': texObj.add.isSubmit && texForm.name.$error.required }" ng-model="texObj.add.model.name" required="true" type="text">
+                            </input>
+                        </div>
+                         <div class="col-md-6 mb-3">
+                            <label>
+                                Amount
+                            </label>
+                            <span class="required">
+                                *
+                            </span>
+                            <input class="form-control" name="amount" ng-class="{ 'input-error': texObj.add.isSubmit && texForm.amount.$error.required }" ng-model="texObj.add.model.amount" required="true" type="number">
+                            </input>
+                        </div>
+                         <div class="col-md-6 mb-3">
+                                <label>
+                                   Select Business
+                                </label>
+                                <span class="required">
+                                    *
+                                </span>
+                                 <select class="form-control" name="business_id" ng-class="{ 'input-error': texObj.add.isSubmit && texForm.business_id.$error.required }" ng-model="texObj.add.model.business_id" ng-required="true">
+                                <option value="">
+                                    -- Select Business --
+                                </option>
+                                <option value="{{p._id}}"  ng-repeat="p in texObj.businesslist">
+                                   {{p.name}}
+                                </option>
+                                </select>
+                        </div>
+                        <div class="col-md-6 mt-4">
+                            <div class="custom-control custom-checkbox">
+                            <input id="customCheck" type="checkbox" class="custom-control-input" ng-class="{ 'input-error': texObj.add.isSubmit && texForm.is_tax_group.$error.required }" ng-model="texObj.add.model.is_tax_group">
+                            <label for="customCheck" class="custom-control-label">Is Tax Group</label>
+                            </div>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="w-100">
+                    <button class="btn btn-primary float-right" ng-click="texObj.add.submit(texForm)" ng-disabled="texObj.add.isReqSent" type="submit">
+                        Save
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Confirm Model -->
+<div aria-hidden="true" class="modal fade text-left" data-backdrop="static" data-keyboard="false" id="removetexData" role="dialog" tabindex="-1">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">
+                    Confirm Remove
+                </h4>
+                <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+                    <span aria-hidden="true">
+                        ×
+                    </span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="col-md-12 order-md-1">
+                    Are you sure you want to delete this record?
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="w-100">
+                    <button class="btn btn-primary float-right" ng-click="texObj.remove.removeData()">
+                        Yes
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Discount Model -->
+<div aria-hidden="true" class="modal fade text-left" data-backdrop="static" data-keyboard="false" id="discountpopup" role="dialog" tabindex="-1">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content" ng-form="discountForm">
+            <div class="modal-header">
+                <h4 class="modal-title">
+                    Discount Details
+                </h4>
+                <button aria-label="Close" class="close" ng-click="discountObj.add.closeModal()">
+                    <span aria-hidden="true">
+                        ×
+                    </span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="col-md-12 order-md-1">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label>
+                                Promo Code
+                            </label>
+                            <span class="required">
+                                *
+                            </span>
+                            <input class="form-control" name="PromoCode" ng-class="{ 'input-error': discountObj.add.isSubmit && discountForm.PromoCode.$error.required }" ng-model="discountObj.add.model.PromoCode" required="true" type="text">
+                            </input>
+                        </div>
+                         <div class="col-md-6 mb-3">
+                            <label>
+                                Amount
+                            </label>
+                            <span class="required">
+                                *
+                            </span>
+                            <input class="form-control" name="Amount" ng-class="{ 'input-error': discountObj.add.isSubmit && discountForm.Amount.$error.required }" ng-model="discountObj.add.model.Amount" required="true" type="number">
+                            </input>
+                        </div>
+                         <div class="col-md-6 mb-3">
+                            <label>
+                                Percentage
+                            </label>
+                            <span class="required">
+                                *
+                            </span>
+                            <input class="form-control" name="Percentage" ng-class="{ 'input-error': discountObj.add.isSubmit && discountForm.Percentage.$error.required }" ng-model="discountObj.add.model.Percentage" required="true" type="number">
+                            </input>
+                        </div>
+                         <div class="col-md-6 mb-3">
+                            <label>
+                                Special Price
+                            </label>
+                            <span class="required">
+                                *
+                            </span>
+                            <input class="form-control" name="SpecialPrice" ng-class="{ 'input-error': discountObj.add.isSubmit && discountForm.SpecialPrice.$error.required }" ng-model="discountObj.add.model.SpecialPrice" required="true" type="number">
+                            </input>
+                        </div>
+                      <!--   <div class="col-md-6 mb-3">
+                            <label>
+                                Valid Date
+                            </label>
+                            <input class="form-control" name="ValidDate" ng-class="{ 'input-error': discountObj.add.isSubmit && discountForm.ValidDate.$error.required }" ng-model="discountObj.add.model.ValidDate" type="text">
+                            </input>
+                        </div> -->
+                         <div class="col-md-6 mb-3">
+                        <label>
+                            Valid Date
+                        </label>
+                        <span class="required">
+                            *
+                        </span>
+                        <div class="input-group">
+                            <input class="form-control" close-text="Close" datepicker-options="g.dtpObj.dateOptions" is-open="g.dtpObj.calObj[1]" name="ValidDate" ng-class="{ 'input-error': discountObj.add.isSubmited && discountForm.ValidDate.$error.required }" ng-model="discountObj.add.model.ValidDate" ng-required="true" readonly="true" type="text" uib-datepicker-popup="{{g.dtpObj.format}}"/>
+                            <div class="input-group-append pointer" ng-click="g.dtpObj.openDp(1)">
+                                <span class="input-group-text br-0" id="basic-addon2">
+                                    <i class="fa fa-calendar">
+                                    </i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="w-100">
+                    <button class="btn btn-primary float-right" ng-click="discountObj.add.submit(discountForm)" ng-disabled="discountObj.add.isReqSent" type="submit">
+                        Save
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Confirm Model -->
+<div aria-hidden="true" class="modal fade text-left" data-backdrop="static" data-keyboard="false" id="removediscountData" role="dialog" tabindex="-1">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">
+                    Confirm Remove
+                </h4>
+                <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+                    <span aria-hidden="true">
+                        ×
+                    </span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="col-md-12 order-md-1">
+                    Are you sure you want to delete this record?
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="w-100">
+                    <button class="btn btn-primary float-right" ng-click="discountObj.remove.removeData()">
+                        Yes
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Barcode Model -->
+<div aria-hidden="true" class="modal fade text-left" data-backdrop="static" data-keyboard="false" id="barcodepopup" role="dialog" tabindex="-1">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content" ng-form="barcodeForm">
+            <div class="modal-header">
+                <h4 class="modal-title">
+                    Barcode Details
+                </h4>
+                <button aria-label="Close" class="close" ng-click="barcodeObj.add.closeModal()">
+                    <span aria-hidden="true">
+                        ×
+                    </span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="col-md-12 order-md-1">
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <label>
+                                Name
+                            </label>
+                            <span class="required">
+                                *
+                            </span>
+                            <input class="form-control" name="name" ng-class="{ 'input-error': barcodeObj.add.isSubmit && barcodeForm.name.$error.required }" ng-model="barcodeObj.add.model.name" required="true" type="text">
+                            </input>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label>
+                                Width
+                            </label>
+                            <span class="required">
+                                *
+                            </span>
+                            <input class="form-control" name="width" ng-class="{ 'input-error': barcodeObj.add.isSubmit && barcodeForm.width.$error.required }" ng-model="barcodeObj.add.model.width" required="true" type="text">
+                            </input>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label>
+                                Height
+                            </label>
+                            <span class="required">
+                                *
+                            </span>
+                            <input class="form-control" name="height" ng-class="{ 'input-error': barcodeObj.add.isSubmit && barcodeForm.height.$error.required }" ng-model="barcodeObj.add.model.height" required="true" type="text">
+                            </input>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label>
+                                Paper Width
+                            </label>
+                            <span class="required">
+                                *
+                            </span>
+                            <input class="form-control" name="paper_width" ng-class="{ 'input-error': barcodeObj.add.isSubmit && barcodeForm.paper_width.$error.required }" ng-model="barcodeObj.add.model.paper_width" required="true" type="text">
+                            </input>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label>
+                                Paper Height
+                            </label>
+                            <span class="required">
+                                *
+                            </span>
+                            <input class="form-control" name="paper_height" ng-class="{ 'input-error': barcodeObj.add.isSubmit && barcodeForm.paper_height.$error.required }" ng-model="barcodeObj.add.model.paper_height" required="true" type="text">
+                            </input>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label>
+                                Top Margin
+                            </label>
+                            <span class="required">
+                                *
+                            </span>
+                            <input class="form-control" name="top_margin" ng-class="{ 'input-error': barcodeObj.add.isSubmit && barcodeForm.top_margin.$error.required }" ng-model="barcodeObj.add.model.top_margin" required="true" type="text">
+                            </input>
+                        </div>
+                         <div class="col-md-4 mb-3">
+                            <label>
+                                Left Margin
+                            </label>
+                            <span class="required">
+                                *
+                            </span>
+                            <input class="form-control" name="left_margin" ng-class="{ 'input-error': barcodeObj.add.isSubmit && barcodeForm.left_margin.$error.required }" ng-model="barcodeObj.add.model.left_margin" required="true" type="text">
+                            </input>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label>
+                                Row Distance
+                            </label>
+                            <span class="required">
+                                *
+                            </span>
+                            <input class="form-control" name="row_distance" ng-class="{ 'input-error': barcodeObj.add.isSubmit && barcodeForm.row_distance.$error.required }" ng-model="barcodeObj.add.model.row_distance" required="true" type="text">
+                            </input>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label>
+                                Column Distance
+                            </label>
+                            <span class="required">
+                                *
+                            </span>
+                            <input class="form-control" name="col_distance" ng-class="{ 'input-error': barcodeObj.add.isSubmit && barcodeForm.col_distance.$error.required }" ng-model="barcodeObj.add.model.col_distance" required="true" type="text">
+                            </input>
+                        </div>
+                         <div class="col-md-4 mb-3">
+                                <label>
+                                   Select Business
+                                </label>
+                                <span class="required">
+                                    *
+                                </span>
+                                 <select class="form-control" name="business_id" ng-class="{ 'input-error': barcodeObj.add.isSubmit && barcodeForm.business_id.$error.required }" ng-model="barcodeObj.add.model.business_id" ng-required="true">
+                                <option value="">
+                                    -- Select Business --
+                                </option>
+                                <option value="{{p._id}}"  ng-repeat="p in barcodeObj.businesslist">
+                                   {{p.name}}
+                                </option>
+                                </select>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label>
+                                Stickers In One Row
+                            </label>
+                            <input class="form-control" name="stickers_in_one_row" ng-class="{ 'input-error': barcodeObj.add.isSubmit && barcodeForm.stickers_in_one_row.$error.required }" ng-model="barcodeObj.add.model.stickers_in_one_row" type="text">
+                            </input>
+                        </div>
+                         <div class="col-md-4 mb-3">
+                            <label>
+                                Stickers In One Sheet
+                            </label>
+                            <input class="form-control" name="stickers_in_one_sheet" ng-class="{ 'input-error': barcodeObj.add.isSubmit && barcodeForm.stickers_in_one_sheet.$error.required }" ng-model="barcodeObj.add.model.stickers_in_one_sheet" type="text">
+                            </input>
+                        </div>
+                         <div class="col-md-4 mb-3">
+                            <label>
+                                Description
+                            </label>
+                            <input class="form-control" name="description" ng-class="{ 'input-error': barcodeObj.add.isSubmit && barcodeForm.description.$error.required }" ng-model="barcodeObj.add.model.description" type="text">
+                            </input>
+                        </div>
+                         <div class="col-md-4 mt-4">
+                            <div class="custom-control custom-checkbox">
+                            <input id="customCheck1" type="checkbox" class="custom-control-input" ng-class="{ 'input-error': barcodeObj.add.isSubmit && barcodeForm.is_default.$error.required }" ng-model="barcodeObj.add.model.is_default">
+                            <label for="customCheck1" class="custom-control-label">Is Default</label>
+                            </div>
+                        </div>
+                         <div class="col-md-4 mt-4">
+                            <div class="custom-control custom-checkbox">
+                            <input id="customCheck2" type="checkbox" class="custom-control-input" ng-class="{ 'input-error': barcodeObj.add.isSubmit && barcodeForm.is_continuous.$error.required }" ng-model="barcodeObj.add.model.is_continuous">
+                            <label for="customCheck2" class="custom-control-label">Is Continuous</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="w-100">
+                    <button class="btn btn-primary float-right" ng-click="barcodeObj.add.submit(barcodeForm)" ng-disabled="barcodeObj.add.isReqSent" type="submit">
+                        Save
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Confirm Model -->
+<div aria-hidden="true" class="modal fade text-left" data-backdrop="static" data-keyboard="false" id="removebarcodeData" role="dialog" tabindex="-1">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">
+                    Confirm Remove
+                </h4>
+                <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+                    <span aria-hidden="true">
+                        ×
+                    </span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="col-md-12 order-md-1">
+                    Are you sure you want to delete this record?
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="w-100">
+                    <button class="btn btn-primary float-right" ng-click="barcodeObj.remove.removeData()">
+                        Yes
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Brand Model -->
+<div aria-hidden="true" class="modal fade text-left" data-backdrop="static" data-keyboard="false" id="brandpopup" role="dialog" tabindex="-1">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content" ng-form="brandForm">
+            <div class="modal-header">
+                <h4 class="modal-title">
+                    Brand Details
+                </h4>
+                <button aria-label="Close" class="close" ng-click="brandObj.add.closeModal()">
+                    <span aria-hidden="true">
+                        ×
+                    </span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="col-md-12 order-md-1">
+                    <div class="row">
+                         <div class="col-md-6 mb-3">
+                                <label>
+                                   Select Business
+                                </label>
+                                <span class="required">
+                                    *
+                                </span>
+                                 <select class="form-control" name="business_id" ng-class="{ 'input-error': brandObj.add.isSubmit && brandForm.business_id.$error.required }" ng-model="brandObj.add.model.business_id" ng-required="true">
+                                <option value="">
+                                    -- Select Business --
+                                </option>
+                                <option value="{{p._id}}"  ng-repeat="p in brandObj.businesslist">
+                                   {{p.name}}
+                                </option>
+                                </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label>
+                              Name
+                            </label>
+                            <span class="required">
+                                *
+                            </span>
+                            <input class="form-control" name="name" ng-class="{ 'input-error': brandObj.add.isSubmit && brandForm.name.$error.required }" ng-model="brandObj.add.model.name" required="true" type="text">
+                            </input>
+                        </div>
+                        <div class="col-md-12 mb-3">
+                            <label>
+                                Description
+                            </label>
+                            <input class="form-control" name="description" ng-class="{ 'input-error': brandObj.add.isSubmit && brandForm.description.$error.required }" ng-model="brandObj.add.model.description" type="text">
+                            </input>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="w-100">
+                    <button class="btn btn-primary float-right" ng-click="brandObj.add.submit(brandForm)" ng-disabled="brandObj.add.isReqSent" type="submit">
+                        Save
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Confirm Model -->
+<div aria-hidden="true" class="modal fade text-left" data-backdrop="static" data-keyboard="false" id="removebrandData" role="dialog" tabindex="-1">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">
+                    Confirm Remove
+                </h4>
+                <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+                    <span aria-hidden="true">
+                        ×
+                    </span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="col-md-12 order-md-1">
+                    Are you sure you want to delete this record?
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="w-100">
+                    <button class="btn btn-primary float-right" ng-click="brandObj.remove.removeData()">
+                        Yes
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Cureency Model -->
+<div aria-hidden="true" class="modal fade text-left" data-backdrop="static" data-keyboard="false" id="currenciespopup" role="dialog" tabindex="-1">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content" ng-form="currencyForm">
+            <div class="modal-header">
+                <h4 class="modal-title">
+                    Currencies Details
+                </h4>
+                <button aria-label="Close" class="close" ng-click="cureencyObj.add.closeModal()">
+                    <span aria-hidden="true">
+                        ×
+                    </span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="col-md-12 order-md-1">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label>
+                              Country
+                            </label>
+                            <span class="required">
+                                *
+                            </span>
+                            <input class="form-control" name="country" ng-class="{ 'input-error': cureencyObj.add.isSubmit && currencyForm.country.$error.required }" ng-model="cureencyObj.add.model.country" required="true" type="text">
+                            </input>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label>
+                              Currency
+                            </label>
+                            <span class="required">
+                                *
+                            </span>
+                            <input class="form-control" name="currency" ng-class="{ 'input-error': cureencyObj.add.isSubmit && currencyForm.currency.$error.required }" ng-model="cureencyObj.add.model.currency" required="true" type="text">
+                            </input>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label>
+                                Code
+                            </label>
+                             <span class="required">
+                                *
+                            </span>
+                            <input class="form-control" name="code" ng-class="{ 'input-error': cureencyObj.add.isSubmit && currencyForm.code.$error.required }" ng-model="cureencyObj.add.model.code" type="text" required="true">
+                            </input>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label>
+                                Symbol
+                            </label>
+                             <span class="required">
+                                *
+                            </span>
+                            <input class="form-control" name="symbol" ng-class="{ 'input-error': cureencyObj.add.isSubmit && currencyForm.symbol.$error.required }" ng-model="cureencyObj.add.model.symbol" type="text" required="true">
+                            </input>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label>
+                                Thousand Separator
+                            </label>
+                            <input class="form-control" name="thousand_separator" ng-class="{ 'input-error': cureencyObj.add.isSubmit && currencyForm.thousand_separator.$error.required }" ng-model="cureencyObj.add.model.thousand_separator" type="text">
+                            </input>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label>
+                                Decimal Separator
+                            </label>
+                            <input class="form-control" name="decimal_separator" ng-class="{ 'input-error': cureencyObj.add.isSubmit && currencyForm.decimal_separator.$error.required }" ng-model="cureencyObj.add.model.decimal_separator" type="text">
+                            </input>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="w-100">
+                    <button class="btn btn-primary float-right" ng-click="cureencyObj.add.submit(currencyForm)" ng-disabled="cureencyObj.add.isReqSent" type="submit">
+                        Save
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Confirm Model -->
+<div aria-hidden="true" class="modal fade text-left" data-backdrop="static" data-keyboard="false" id="removecurrenciesData" role="dialog" tabindex="-1">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">
+                    Confirm Remove
+                </h4>
+                <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+                    <span aria-hidden="true">
+                        ×
+                    </span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="col-md-12 order-md-1">
+                    Are you sure you want to delete this record?
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="w-100">
+                    <button class="btn btn-primary float-right" ng-click="cureencyObj.remove.removeData()">
+                        Yes
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Customer Group Model -->
+<div aria-hidden="true" class="modal fade text-left" data-backdrop="static" data-keyboard="false" id="custgrppopup" role="dialog" tabindex="-1">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content" ng-form="custgrpForm">
+            <div class="modal-header">
+                <h4 class="modal-title">
+                    Customer Group Details
+                </h4>
+                <button aria-label="Close" class="close" ng-click="custgrpObj.add.closeModal()">
+                    <span aria-hidden="true">
+                        ×
+                    </span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="col-md-12 order-md-1">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                                <label>
+                                   Select Business
+                                </label>
+                                <span class="required">
+                                    *
+                                </span>
+                                 <select class="form-control" name="business_id" ng-class="{ 'input-error': custgrpObj.add.isSubmit && custgrpForm.business_id.$error.required }" ng-model="custgrpObj.add.model.business_id" ng-required="true">
+                                <option value="">
+                                    -- Select Business --
+                                </option>
+                                <option value="{{p._id}}"  ng-repeat="p in custgrpObj.businesslist">
+                                   {{p.name}}
+                                </option>
+                                </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label>
+                              Name
+                            </label>
+                            <span class="required">
+                                *
+                            </span>
+                            <input class="form-control" name="name" ng-class="{ 'input-error': custgrpObj.add.isSubmit && custgrpForm.name.$error.required }" ng-model="custgrpObj.add.model.name" required="true" type="text">
+                            </input>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label>
+                                Amount
+                            </label>
+                            <input class="form-control" name="amount" ng-class="{ 'input-error': custgrpObj.add.isSubmit && custgrpForm.amount.$error.required }" ng-model="custgrpObj.add.model.amount" type="number">
+                            </input>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="w-100">
+                    <button class="btn btn-primary float-right" ng-click="custgrpObj.add.submit(custgrpForm)" ng-disabled="custgrpObj.add.isReqSent" type="submit">
+                        Save
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Confirm Model -->
+<div aria-hidden="true" class="modal fade text-left" data-backdrop="static" data-keyboard="false" id="removecusgrpData" role="dialog" tabindex="-1">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">
+                    Confirm Remove
+                </h4>
+                <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+                    <span aria-hidden="true">
+                        ×
+                    </span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="col-md-12 order-md-1">
+                    Are you sure you want to delete this record?
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="w-100">
+                    <button class="btn btn-primary float-right" ng-click="custgrpObj.remove.removeData()">
+                        Yes
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Expense Category Model -->
+<div aria-hidden="true" class="modal fade text-left" data-backdrop="static" data-keyboard="false" id="expcatpopup" role="dialog" tabindex="-1">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content" ng-form="expcatForm">
+            <div class="modal-header">
+                <h4 class="modal-title">
+                    Expense Category Details
+                </h4>
+                <button aria-label="Close" class="close" ng-click="expcatObj.add.closeModal()">
+                    <span aria-hidden="true">
+                        ×
+                    </span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="col-md-12 order-md-1">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                                <label>
+                                   Select Business
+                                </label>
+                                <span class="required">
+                                    *
+                                </span>
+                                 <select class="form-control" name="business_id" ng-class="{ 'input-error': expcatObj.add.isSubmit && expcatForm.business_id.$error.required }" ng-model="expcatObj.add.model.business_id" ng-required="true">
+                                <option value="">
+                                    -- Select Business --
+                                </option>
+                                <option value="{{p._id}}"  ng-repeat="p in expcatObj.businesslist">
+                                   {{p.name}}
+                                </option>
+                                </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label>
+                              Name
+                            </label>
+                            <span class="required">
+                                *
+                            </span>
+                            <input class="form-control" name="name" ng-class="{ 'input-error': expcatObj.add.isSubmit && expcatForm.name.$error.required }" ng-model="expcatObj.add.model.name" required="true" type="text">
+                            </input>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label>
+                                Code
+                            </label>
+                            <input class="form-control" name="code" ng-class="{ 'input-error': expcatObj.add.isSubmit && expcatForm.code.$error.required }" ng-model="expcatObj.add.model.code" type="text">
+                            </input>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="w-100">
+                    <button class="btn btn-primary float-right" ng-click="expcatObj.add.submit(expcatForm)" ng-disabled="expcatObj.add.isReqSent" type="submit">
+                        Save
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Confirm Model -->
+<div aria-hidden="true" class="modal fade text-left" data-backdrop="static" data-keyboard="false" id="removeexpcatData" role="dialog" tabindex="-1">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">
+                    Confirm Remove
+                </h4>
+                <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+                    <span aria-hidden="true">
+                        ×
+                    </span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="col-md-12 order-md-1">
+                    Are you sure you want to delete this record?
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="w-100">
+                    <button class="btn btn-primary float-right" ng-click="expcatObj.remove.removeData()">
+                        Yes
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Business Details Model -->
+<div aria-hidden="true" class="modal fade text-left" data-backdrop="static" data-keyboard="false" id="businesspopup" role="dialog" tabindex="-1">
+    <div class="modal-dialog modal-lg employeemodal" role="document">
+        <div class="modal-content" ng-form="businessForm">
+            <div class="modal-header">
+                <h4 class="modal-title">
+                    Business Details
+                </h4>
+                <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+                    <span aria-hidden="true">
+                        ×
+                    </span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">                                    
+                    <div class="col-md-3 mb-3">
+                        <label>
+                            Name
+                        </label>
+                        <span class="required">
+                                *
+                        </span>
+                        <input class="form-control" name="name" ng-class="{ 'input-error': businessObj.add.isSubmit && businessForm.name.$error.required }" ng-model="businessObj.add.model.name" required="true" type="text">
+                        </input>
+                    </div>   
+                    <div class="col-md-3 mb-3">
+                                <label>
+                                   Currency
+                                </label>
+                                <span class="required">
+                                    *
+                                </span>
+                                 <select class="form-control" name="currency_id" ng-class="{ 'input-error': businessObj.add.isSubmit && businessForm.currency_id.$error.required }" ng-model="businessObj.add.model.currency_id" ng-required="true">
+                                <option value="">
+                                    -- Select Currency --
+                                </option>
+                                <option value="{{p._id}}"  ng-repeat="p in businessObj.currencylist">
+                                   {{p.currency}}
+                                </option>
+                                </select>
+                        </div>
+                    <div class="col-md-3 mb-3">
+                        <label>
+                            Start Date
+                        </label>
+                        <span class="required">
+                                *
+                        </span>
+                        <div class="input-group">
+                            <input class="form-control" close-text="Close" datepicker-options="g.dtpObj.dateOptions" is-open="g.dtpObj.calObj[1]" name="start_date" ng-class="{ 'input-error': businessObj.add.isSubmited && businessForm.start_date.$error.required }" ng-model="businessObj.add.model.start_date" ng-required="true" readonly="true" type="text" uib-datepicker-popup="{{g.dtpObj.format}}"/>
+                            <div class="input-group-append pointer" ng-click="g.dtpObj.openDp(1)">
+                                <span class="input-group-text br-0" id="basic-addon2">
+                                    <i class="fa fa-calendar">
+                                    </i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>      
+                    <div class="col-md-3 mb-3">
+                        <label>
+                            Tax Number 1
+                        </label>
+                        <span class="required">
+                                *
+                        </span>
+                        <input class="form-control" name="tax_number_1" ng-class="{ 'input-error': businessObj.add.isSubmit && businessForm.tax_number_1.$error.required }" ng-model="businessObj.add.model.tax_number_1" required="true" type="text">
+                        </input>
+                    </div>   
+                     <div class="col-md-3 mb-3">
+                        <label>
+                            Tax Label 1
+                        </label>
+                        <span class="required">
+                                *
+                        </span>
+                        <input class="form-control" name="tax_label_1" ng-class="{ 'input-error': businessObj.add.isSubmit && businessForm.tax_label_1.$error.required }" ng-model="businessObj.add.model.tax_label_1" required="true" type="text">
+                        </input>
+                    </div>   
+                     <div class="col-md-3 mb-3">
+                        <label>
+                            Tax Number 2
+                        </label>
+                        <input class="form-control" name="tax_number_2" ng-class="{ 'input-error': businessObj.add.isSubmit && businessForm.tax_number_2.$error.required }" ng-model="businessObj.add.model.tax_number_2" type="text">
+                        </input>
+                    </div>   
+                     <div class="col-md-3 mb-3">
+                        <label>
+                            Tax Label 2
+                        </label>                       
+                        <input class="form-control" name="tax_label_2" ng-class="{ 'input-error': businessObj.add.isSubmit && businessForm.tax_label_2.$error.required }" ng-model="businessObj.add.model.tax_label_2" type="text">
+                        </input>
+                    </div>   
+                     <div class="col-md-3 mb-3">
+                        <label>
+                            Default Sales Tax
+                        </label>
+                        <span class="required">
+                                *
+                        </span>
+                        <input class="form-control" name="default_sales_tax" ng-class="{ 'input-error': businessObj.add.isSubmit && businessForm.default_sales_tax.$error.required }" ng-model="businessObj.add.model.default_sales_tax" required="true" type="Number">
+                        </input>
+                    </div>   
+                     <div class="col-md-3 mb-3">
+                        <label>
+                            Default Profit Percent
+                        </label>
+                        <span class="required">
+                                *
+                        </span>
+                        <input class="form-control" name="default_profit_percent" ng-class="{ 'input-error': businessObj.add.isSubmit && businessForm.default_profit_percent.$error.required }" ng-model="businessObj.add.model.default_profit_percent" required="true" type="text">
+                        </input>
+                    </div>    
+                     <div class="col-md-3 mb-3">
+                        <label>
+                             Owner
+                        </label>
+                        <span class="required">
+                                *
+                        </span>
+                        <input class="form-control" name="owner_id" ng-class="{ 'input-error': businessObj.add.isSubmit && businessForm.owner_id.$error.required }" ng-model="businessObj.add.model.owner_id" required="true" type="text">
+                        </input>
+                    </div>    
+                     <div class="col-md-3 mb-3">
+                        <label>
+                            Time Zone
+                        </label>
+                        <span class="required">
+                                *
+                        </span>
+                        <input class="form-control" name="time_zone" ng-class="{ 'input-error': businessObj.add.isSubmit && businessForm.time_zone.$error.required }" ng-model="businessObj.add.model.time_zone" required="true" type="text">
+                        </input>
+                    </div>    
+                     <div class="col-md-3 mb-3">
+                        <label>
+                            Fy Start Month
+                        </label>
+                        <span class="required">
+                                *
+                        </span>
+                        <input class="form-control" name="fy_start_month" ng-class="{ 'input-error': businessObj.add.isSubmit && businessForm.fy_start_month.$error.required }" ng-model="businessObj.add.model.fy_start_month" required="true" type="Number">
+                        </input>
+                    </div>  
+                    <div class="col-md-3 mb-3">
+                                <label>
+                                   Accounting Method
+                                </label>
+                                <span class="required">
+                                    *
+                                </span>
+                                 <select class="form-control" name="accounting_method" ng-class="{ 'input-error': productObj.add.isSubmit && productForm.accounting_method.$error.required }" ng-model="productObj.add.model.accounting_method" ng-required="true">
+                                <option value="">
+                                    -- Select Type --
+                                </option>
+                                <option value="Fifo">
+                                   Fifo
+                                </option>
+                                 <option value="Lifo">
+                                   Lifo
+                                </option>
+                                 <option value="Avco">
+                                   Avco
+                                </option>
+                                </select>
+                    </div>
+                     <div class="col-md-3 mb-3">
+                        <label>
+                            Default Sales Discount
+                        </label>
+                        <span class="required">
+                                *
+                        </span>
+                        <input class="form-control" name="default_sales_discount" ng-class="{ 'input-error': businessObj.add.isSubmit && businessForm.default_sales_discount.$error.required }" ng-model="businessObj.add.model.default_sales_discount" required="true" type="text">
+                        </input>
+                    </div> 
+                    <div class="col-md-3 mb-3">
+                                <label>
+                                   Sell Price Tax
+                                </label>
+                                <span class="required">
+                                    *
+                                </span>
+                                 <select class="form-control" name="sell_price_tax" ng-class="{ 'input-error': productObj.add.isSubmit && productForm.sell_price_tax.$error.required }" ng-model="productObj.add.model.sell_price_tax" ng-required="true">
+                                <option value="">
+                                    -- Select Sell Price Tax --
+                                </option>
+                                <option value="Includes">
+                                   Includes
+                                </option>
+                                 <option value="Excludes">
+                                   Excludes
+                                </option>
+                                </select>
+                    </div>
+                     <div class="col-md-3 mb-3">
+                        <label>
+                            Logo
+                        </label>
+                        <span class="required">
+                                *
+                        </span>
+                        <input class="form-control" name="logo" ng-class="{ 'input-error': businessObj.add.isSubmit && businessForm.logo.$error.required }" ng-model="businessObj.add.model.logo" required="true" type="text">
+                        </input>
+                    </div>    
+                     <div class="col-md-3 mb-3">
+                        <label>
+                            Sku Prefix
+                        </label>
+                        <span class="required">
+                                *
+                        </span>
+                        <input class="form-control" name="sku_prefix" ng-class="{ 'input-error': businessObj.add.isSubmit && businessForm.sku_prefix.$error.required }" ng-model="businessObj.add.model.sku_prefix" required="true" type="text">
+                        </input>
+                    </div>    
+                     <div class="col-md-3 mb-3">
+                        <label>
+                            Enable Product Expiry
+                        </label>
+                        <span class="required">
+                                *
+                        </span>
+                        <input class="form-control" name="enable_product_expiry" ng-class="{ 'input-error': businessObj.add.isSubmit && businessForm.enable_product_expiry.$error.required }" ng-model="businessObj.add.model.enable_product_expiry" required="true" type="text">
+                        </input>
+                    </div>                     
+                    <div class="col-md-3 mb-3">
+                                <label>
+                                   Expire Type
+                                </label>
+                                <span class="required">
+                                    *
+                                </span>
+                                 <select class="form-control" name="expiry_type" ng-class="{ 'input-error': productObj.add.isSubmit && productForm.expiry_type.$error.required }" ng-model="productObj.add.model.expiry_type" ng-required="true">
+                                <option value="">
+                                    -- Select Expire Type --
+                                </option>
+                                <option value="add_expiry">
+                                   Add Expiry
+                                </option>
+                                 <option value="add_manufacturing">
+                                   Add Manufacturing
+                                </option>
+                                </select>
+                    </div>
+                     <div class="col-md-3 mb-3">
+                                <label>
+                                   On Product Expire
+                                </label>
+                                <span class="required">
+                                    *
+                                </span>
+                                 <select class="form-control" name="on_product_expiry" ng-class="{ 'input-error': productObj.add.isSubmit && productForm.on_product_expiry.$error.required }" ng-model="productObj.add.model.on_product_expiry" ng-required="true">
+                                <option value="">
+                                    -- Select Product Expire --
+                                </option>
+                                <option value="keep_selling">
+                                   Keep Selling
+                                </option>
+                                 <option value="stop_selling">
+                                   Stop Selling
+                                </option> 
+                                <option value="auto_delete">
+                                   Auto Delete
+                                </option>
+                                </select>
+                    </div>
+                      <div class="col-md-3 mb-3">
+                        <label>
+                            Stop Selling Before
+                        </label>
+                        <span class="required">
+                                *
+                        </span>
+                        <input class="form-control" name="stop_selling_before" ng-class="{ 'input-error': businessObj.add.isSubmit && businessForm.stop_selling_before.$error.required }" ng-model="businessObj.add.model.stop_selling_before" required="true" type="Number">
+                        </input>
+                    </div>   
+                     <div class="col-md-3 mb-3">
+                        <label>
+                            Enable Tooltip
+                        </label>
+                        <span class="required">
+                                *
+                        </span>
+                        <input class="form-control" name="enable_tooltip" ng-class="{ 'input-error': businessObj.add.isSubmit && businessForm.enable_tooltip.$error.required }" ng-model="businessObj.add.model.enable_tooltip" required="true" type="text">
+                        </input>
+                    </div>   
+                     <div class="col-md-3 mb-3">
+                        <label>
+                            Purchase In Diff Currency
+                        </label>
+                        <span class="required">
+                                *
+                        </span>
+                        <input class="form-control" name="purchase_in_diff_currency" ng-class="{ 'input-error': businessObj.add.isSubmit && businessForm.purchase_in_diff_currency.$error.required }" ng-model="businessObj.add.model.purchase_in_diff_currency" required="true" type="text">
+                        </input>
+                    </div>   
+                     <div class="col-md-3 mb-3">
+                        <label>
+                            Purchase Currency Id
+                        </label>
+                        <span class="required">
+                                *
+                        </span>
+                        <input class="form-control" name="purchase_currency_id" ng-class="{ 'input-error': businessObj.add.isSubmit && businessForm.purchase_currency_id.$error.required }" ng-model="businessObj.add.model.purchase_currency_id" required="true" type="Number">
+                        </input>
+                    </div>  
+                      <div class="col-md-3 mb-3">
+                        <label>
+                            P Exchange Rate
+                        </label>
+                        <span class="required">
+                                *
+                        </span>
+                        <input class="form-control" name="p_exchange_rate" ng-class="{ 'input-error': businessObj.add.isSubmit && businessForm.p_exchange_rate.$error.required }" ng-model="businessObj.add.model.p_exchange_rate" required="true" type="text">
+                        </input>
+                    </div>   
+                     <div class="col-md-3 mb-3">
+                        <label>
+                            Transaction Edit Days
+                        </label>
+                        <span class="required">
+                                *
+                        </span>
+                        <input class="form-control" name="transaction_edit_days" ng-class="{ 'input-error': businessObj.add.isSubmit && businessForm.transaction_edit_days.$error.required }" ng-model="businessObj.add.model.transaction_edit_days" required="true" type="Number">
+                        </input>
+                    </div>  
+                      <div class="col-md-3 mb-3">
+                        <label>
+                            Stock Expiry Alert Days
+                        </label>
+                        <span class="required">
+                                *
+                        </span>
+                        <input class="form-control" name="stock_expiry_alert_days" ng-class="{ 'input-error': businessObj.add.isSubmit && businessForm.stock_expiry_alert_days.$error.required }" ng-model="businessObj.add.model.stock_expiry_alert_days" required="true" type="Number">
+                        </input>
+                    </div>   
+                     <div class="col-md-3 mb-3">
+                        <label>
+                            Keyboard Shortcuts
+                        </label>
+                        <span class="required">
+                                *
+                        </span>
+                        <input class="form-control" name="keyboard_shortcuts" ng-class="{ 'input-error': businessObj.add.isSubmit && businessForm.keyboard_shortcuts.$error.required }" ng-model="businessObj.add.model.keyboard_shortcuts" required="true" type="text">
+                        </input>
+                    </div>   
+                     <div class="col-md-3 mb-3">
+                        <label>
+                            Pos Settings
+                        </label>
+                        <span class="required">
+                                *
+                        </span>
+                        <input class="form-control" name="pos_settings" ng-class="{ 'input-error': businessObj.add.isSubmit && businessForm.pos_settings.$error.required }" ng-model="businessObj.add.model.pos_settings" required="true" type="text">
+                        </input>
+                    </div>   
+                     <div class="col-md-3 mb-3">
+                        <label>
+                            Enable Brand
+                        </label>
+                        <span class="required">
+                                *
+                        </span>
+                        <input class="form-control" name="enable_brand" ng-class="{ 'input-error': businessObj.add.isSubmit && businessForm.enable_brand.$error.required }" ng-model="businessObj.add.model.enable_brand" required="true" type="text">
+                        </input>
+                    </div>   
+                     <div class="col-md-3 mb-3">
+                        <label>
+                            Enable Category
+                        </label>
+                        <span class="required">
+                                *
+                        </span>
+                        <input class="form-control" name="enable_category" ng-class="{ 'input-error': businessObj.add.isSubmit && businessForm.enable_category.$error.required }" ng-model="businessObj.add.model.enable_category" required="true" type="Number">
+                        </input>
+                    </div>   
+                     <div class="col-md-3 mb-3">
+                        <label>
+                            Enable Sub Category
+                        </label>
+                        <span class="required">
+                                *
+                        </span>
+                        <input class="form-control" name="enable_sub_category" ng-class="{ 'input-error': businessObj.add.isSubmit && businessForm.enable_sub_category.$error.required }" ng-model="businessObj.add.model.enable_sub_category" required="true" type="Number">
+                        </input>
+                    </div>      
+                     <div class="col-md-3 mb-3">
+                        <label>
+                            Enable Price Tax
+                        </label>
+                        <span class="required">
+                                *
+                        </span>
+                        <input class="form-control" name="enable_price_tax" ng-class="{ 'input-error': businessObj.add.isSubmit && businessForm.enable_price_tax.$error.required }" ng-model="businessObj.add.model.enable_price_tax" required="true" type="Number">
+                        </input>
+                    </div>      
+                     <div class="col-md-3 mb-3">
+                        <label>
+                            Enable Purchase Status
+                        </label>
+                        <span class="required">
+                                *
+                        </span>
+                        <input class="form-control" name="enable_purchase_status" ng-class="{ 'input-error': businessObj.add.isSubmit && businessForm.enable_purchase_status.$error.required }" ng-model="businessObj.add.model.enable_purchase_status" required="true" type="Number">
+                        </input>
+                    </div>      
+                     <div class="col-md-3 mb-3">
+                        <label>
+                            Enable Lot Number 
+                        </label>
+                        <span class="required">
+                                *
+                        </span>
+                        <input class="form-control" name="enable_lot_number" ng-class="{ 'input-error': businessObj.add.isSubmit && businessForm.enable_lot_number.$error.required }" ng-model="businessObj.add.model.enable_lot_number" required="true" type="Number">
+                        </input>
+                    </div>      
+                     <div class="col-md-3 mb-3">
+                        <label>
+                            Default Unit
+                        </label>
+                        <span class="required">
+                                *
+                        </span>
+                        <input class="form-control" name="default_unit" ng-class="{ 'input-error': businessObj.add.isSubmit && businessForm.default_unit.$error.required }" ng-model="businessObj.add.model.default_unit" required="true" type="Number">
+                        </input>
+                    </div>      
+                     <div class="col-md-3 mb-3">
+                        <label>
+                            Enable Racks
+                        </label>
+                        <span class="required">
+                                *
+                        </span>
+                        <input class="form-control" name="enable_racks" ng-class="{ 'input-error': businessObj.add.isSubmit && businessForm.enable_racks.$error.required }" ng-model="businessObj.add.model.enable_racks" required="true" type="Number">
+                        </input>
+                    </div>      
+                     <div class="col-md-3 mb-3">
+                        <label>
+                            Enable Row
+                        </label>
+                        <span class="required">
+                                *
+                        </span>
+                        <input class="form-control" name="enable_row" ng-class="{ 'input-error': businessObj.add.isSubmit && businessForm.enable_row.$error.required }" ng-model="businessObj.add.model.enable_row" required="true" type="Number">
+                        </input>
+                    </div>      
+                     <div class="col-md-3 mb-3">
+                        <label>
+                            Enable Position
+                        </label>
+                        <span class="required">
+                                *
+                        </span>
+                        <input class="form-control" name="enable_position" ng-class="{ 'input-error': businessObj.add.isSubmit && businessForm.enable_position.$error.required }" ng-model="businessObj.add.model.enable_position" required="true" type="Number">
+                        </input>
+                    </div>      
+                     <div class="col-md-3 mb-3">
+                        <label>
+                            Enable Editing Product From Purchase
+                        </label>
+                        <span class="required">
+                                *
+                        </span>
+                        <input class="form-control" name="enable_editing_product_from_purchase" ng-class="{ 'input-error': businessObj.add.isSubmit && businessForm.enable_editing_product_from_purchase.$error.required }" ng-model="businessObj.add.model.enable_editing_product_from_purchase" required="true" type="Number">
+                        </input>
+                    </div> 
+                    <div class="col-md-3 mb-3">
+                                <label>
+                                   Sales CMSN AGNT
+                                </label>
+                                <span class="required">
+                                    *
+                                </span>
+                                 <select class="form-control" name="sales_cmsn_agnt" ng-class="{ 'input-error': productObj.add.isSubmit && productForm.sales_cmsn_agnt.$error.required }" ng-model="productObj.add.model.sales_cmsn_agnt" ng-required="true">
+                                <option value="">
+                                    -- Select Cmsn Agnt --
+                                </option>
+                                <option value="logged_in_user">
+                                   Logged In User
+                                </option>
+                                 <option value="user">
+                                  User
+                                </option> 
+                                <option value="cmsn_agnt">
+                                    CMSN Agnt
+                                </option>
+                                </select>
+                    </div>
+                     <div class="col-md-3 mb-3">
+                        <label>
+                        Item Addition Method
+                        </label>
+                        <span class="required">
+                                *
+                        </span>
+                        <input class="form-control" name="item_addition_method" ng-class="{ 'input-error': businessObj.add.isSubmit && businessForm.item_addition_method.$error.required }" ng-model="businessObj.add.model.item_addition_method" required="true" type="Number">
+                        </input>
+                    </div>     
+                     <div class="col-md-3 mb-3">
+                        <label>
+                            Enable Inline Tax
+                        </label>
+                        <span class="required">
+                                *
+                        </span>
+                        <input class="form-control" name="enable_inline_tax" ng-class="{ 'input-error': businessObj.add.isSubmit && businessForm.enable_inline_tax.$error.required }" ng-model="businessObj.add.model.enable_inline_tax" required="true" type="Number">
+                        </input>
+                    </div>  
+                    <div class="col-md-3 mb-3">
+                                <label>
+                                   Currency Symbol Placement
+                                </label>
+                                <span class="required">
+                                    *
+                                </span>
+                                 <select class="form-control" name="currency_symbol_placement" ng-class="{ 'input-error': productObj.add.isSubmit && productForm.currency_symbol_placement.$error.required }" ng-model="productObj.add.model.currency_symbol_placement" ng-required="true">
+                                <option value="">
+                                    -- Select Currency Symbol Placement --
+                                </option>
+                                <option value="before">
+                                   Before
+                                </option>
+                                <option value="after">
+                                   After
+                                </option>
+                                </select>
+                    </div>
+                     <div class="col-md-3 mb-3">
+                        <label>
+                            Enabled Modules
+                        </label>
+                        <span class="required">
+                                *
+                        </span>
+                        <input class="form-control" name="enabled_modules" ng-class="{ 'input-error': businessObj.add.isSubmit && businessForm.enabled_modules.$error.required }" ng-model="businessObj.add.model.enabled_modules" required="true" type="text">
+                        </input>
+                    </div>     
+                     <div class="col-md-3 mb-3">
+                        <label>
+                            Date Format
+                        </label>
+                        <span class="required">
+                                *
+                        </span>
+                        <input class="form-control" name="date_format" ng-class="{ 'input-error': businessObj.add.isSubmit && businessForm.date_format.$error.required }" ng-model="businessObj.add.model.date_format" required="true" type="text">
+                        </input>
+                    </div> 
+                    <div class="col-md-3 mb-3">
+                                <label>
+                                   Time Format
+                                </label>
+                                <span class="required">
+                                    *
+                                </span>
+                                 <select class="form-control" name="time_format" ng-class="{ 'input-error': productObj.add.isSubmit && productForm.time_format.$error.required }" ng-model="productObj.add.model.time_format" ng-required="true">
+                                <option value="">
+                                    -- Select Time Format --
+                                </option>
+                                <option value="12">
+                                   12
+                                </option>
+                                <option value="24">
+                                   24
+                                </option>
+                                </select>
+                    </div>
+                     <div class="col-md-3 mb-3">
+                        <label>
+                            Theme Color
+                        </label>
+                        <span class="required">
+                                *
+                        </span>
+                        <input class="form-control" name="theme_color" ng-class="{ 'input-error': businessObj.add.isSubmit && businessForm.theme_color.$error.required }" ng-model="businessObj.add.model.theme_color" required="true" type="text">
+                        </input>
+                    </div>      
+                     <div class="col-md-3 mb-3">
+                        <label>
+                            Email Settings
+                        </label>
+                        <span class="required">
+                                *
+                        </span>
+                        <input class="form-control" name="email_settings" ng-class="{ 'input-error': businessObj.add.isSubmit && businessForm.email_settings.$error.required }" ng-model="businessObj.add.model.email_settings" required="true" type="text">
+                        </input>
+                    </div>      
+                     <div class="col-md-3 mb-3">
+                        <label> 
+                            Sms Settings
+                        </label>
+                        <span class="required">
+                                *
+                        </span>
+                        <input class="form-control" name="sms_settings" ng-class="{ 'input-error': businessObj.add.isSubmit && businessForm.sms_settings.$error.required }" ng-model="businessObj.add.model.sms_settings" required="true" type="text">
+                        </input>
+                    </div>  
+                     <div class="col-md-3 mt-4">
+                            <div class="custom-control custom-checkbox">
+                            <input id="customCheck4" type="checkbox" class="custom-control-input" ng-class="{ 'input-error': businessObj.add.isSubmit && businessForm.is_active.$error.required }" ng-model="businessObj.add.model.is_active">
+                            <label for="customCheck4" class="custom-control-label">Is Active</label>
+                            </div>
+                     </div>
+               </div>                
+              
+
+
+            </div>
+            <div class="modal-footer">
+                <div class="w-100" ng-if="!businessObj.add.isReqSent">
+                    <button class="btn btn-primary float-right" ng-click="businessObj.add.submit(businessForm)" ng-disabled="businessObj.add.isReqSent" type="submit">
+                        Save
+                    </button>
+                </div>
+                <div class="w-100" ng-if="businessObj.add.isReqSent">
+                    <button class="btn btn-primary float-right" disabled="">
+                        Saving...
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Confirm Model -->
+<div aria-hidden="true" class="modal fade text-left" data-backdrop="static" data-keyboard="false" id="removebusinessData" role="dialog" tabindex="-1">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">
+                    Confirm Remove
+                </h4>
+                <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+                    <span aria-hidden="true">
+                        ×
+                    </span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="col-md-12 order-md-1">
+                    Are you sure you want to delete this record?
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="w-100">
+                    <button class="btn btn-primary float-right" ng-click="businessObj.remove.removeData()">
+                        Yes
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<!-- Unit Model -->
+<div aria-hidden="true" class="modal fade text-left" data-backdrop="static" data-keyboard="false" id="unitpopup" role="dialog" tabindex="-1">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content" ng-form="unitForm">
+            <div class="modal-header">
+                <h4 class="modal-title">
+                    Unit Details
+                </h4>
+                <button aria-label="Close" class="close" ng-click="unitObj.add.closeModal()">
+                    <span aria-hidden="true">
+                        ×
+                    </span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="col-md-12 order-md-1">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                                <label>
+                                   Select Business
+                                </label>
+                                <span class="required">
+                                    *
+                                </span>
+                                 <select class="form-control" name="business_id" ng-class="{ 'input-error': unitObj.add.isSubmit && unitForm.business_id.$error.required }" ng-model="unitObj.add.model.business_id" ng-required="true">
+                                <option value="">
+                                    -- Select Business --
+                                </option>
+                                <option value="{{p._id}}"  ng-repeat="p in unitObj.businesslist">
+                                   {{p.name}}
+                                </option>
+                                </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label>
+                              Actual Name
+                            </label>
+                            <span class="required">
+                                *
+                            </span>
+                            <input class="form-control" name="actual_name" ng-class="{ 'input-error': unitObj.add.isSubmit && unitForm.actual_name.$error.required }" ng-model="unitObj.add.model.actual_name" required="true" type="text">
+                            </input>
+                        </div>
+                         <div class="col-md-6 mb-3">
+                            <label>
+                              Short Name
+                            </label>
+                            <span class="required">
+                                *
+                            </span>
+                            <input class="form-control" name="short_name" ng-class="{ 'input-error': unitObj.add.isSubmit && unitForm.short_name.$error.required }" ng-model="unitObj.add.model.short_name" required="true" type="text">
+                            </input>
+                        </div>
+                         <div class="col-md-6 mt-4">
+                            <div class="custom-control custom-checkbox">
+                            <input id="customCheck5" type="checkbox" class="custom-control-input" ng-class="{ 'input-error': unitObj.add.isSubmit && unitForm.allow_decimal.$error.required }" ng-model="unitObj.add.model.allow_decimal">
+                            <label for="customCheck5" class="custom-control-label">Allow Decimal</label>
+                            </div>
+                     </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="w-100">
+                    <button class="btn btn-primary float-right" ng-click="unitObj.add.submit(unitForm)" ng-disabled="unitObj.add.isReqSent" type="submit">
+                        Save
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Confirm Model -->
+<div aria-hidden="true" class="modal fade text-left" data-backdrop="static" data-keyboard="false" id="removeunitData" role="dialog" tabindex="-1">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">
+                    Confirm Remove
+                </h4>
+                <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+                    <span aria-hidden="true">
+                        ×
+                    </span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="col-md-12 order-md-1">
+                    Are you sure you want to delete this record?
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="w-100">
+                    <button class="btn btn-primary float-right" ng-click="unitObj.remove.removeData()">
+                        Yes
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Contact Model -->
+<div aria-hidden="true" class="modal fade text-left" data-backdrop="static" data-keyboard="false" id="contactpopup" role="dialog" tabindex="-1">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content" ng-form="contactForm">
+            <div class="modal-header">
+                <h4 class="modal-title">
+                    Contact Details
+                </h4>
+                <button aria-label="Close" class="close" ng-click="contactObj.add.closeModal()">
+                    <span aria-hidden="true">
+                        ×
+                    </span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="col-md-12 order-md-1">
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                                <label>
+                                   Select Business
+                                </label>
+                                <span class="required">
+                                    *
+                                </span>
+                                 <select class="form-control" name="business_id" ng-class="{ 'input-error': contactObj.add.isSubmit && productForm.business_id.$error.required }" ng-model="contactObj.add.model.business_id" ng-required="true">
+                                <option value="">
+                                    -- Select Business --
+                                </option>
+                                <option value="{{p._id}}"  ng-repeat="p in contactObj.businesslist">
+                                   {{p.name}}
+                                </option>
+                                </select>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                                <label>
+                                      Type
+                                </label>
+                                <span class="required">
+                                    *
+                                </span>
+                                 <select class="form-control" name="type" ng-class="{ 'input-error': contactObj.add.isSubmit && contactForm.type.$error.required }" ng-model="contactObj.add.model.type" ng-required="true">
+                                <option value="">
+                                    -- Select Type --
+                                </option>
+                                <option value="supplier">
+                                   Supplier
+                                </option>
+                                 <option value="customer">
+                                   Customer
+                                </option>
+                                 <option value="both">
+                                   Both
+                                </option>
+                                </select>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label>
+                                Supplier Business Name
+                            </label>
+                            <span class="required">
+                                *
+                            </span>
+                            <input class="form-control" name="supplier_business_name" ng-class="{ 'input-error': contactObj.add.isSubmit && contactForm.supplier_business_name.$error.required }" ng-model="contactObj.add.model.supplier_business_name" required="true" type="text">
+                            </input>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label>
+                                Name
+                            </label>
+                            <span class="required">
+                                *
+                            </span>
+                            <input class="form-control" name="name" ng-class="{ 'input-error': contactObj.add.isSubmit && contactForm.name.$error.required }" ng-model="contactObj.add.model.name" required="true" type="text">
+                            </input>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label>
+                                Email
+                            </label>
+                            <span class="required">
+                                *
+                            </span>
+                            <input class="form-control" name="email" ng-class="{ 'input-error': contactObj.add.isSubmit && contactForm.email.$error.required }" ng-model="contactObj.add.model.email" required="true" type="text">
+                            </input>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label>
+                                Contact Id
+                            </label>
+                            <span class="required">
+                                *
+                            </span>
+                            <input class="form-control" name="contact_id" ng-class="{ 'input-error': contactObj.add.isSubmit && contactForm.contact_id.$error.required }" ng-model="contactObj.add.model.contact_id" required="true" type="text">
+                            </input>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label>
+                               Tax Number
+                            </label>
+                            <span class="required">
+                                *
+                            </span>
+                            <input class="form-control" name="tax_number" ng-class="{ 'input-error': contactObj.add.isSubmit && contactForm.tax_number.$error.required }" ng-model="contactObj.add.model.tax_number" required="true" type="text">
+                            </input>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label>
+                                City
+                            </label>
+                            <span class="required">
+                                *
+                            </span>
+                            <input class="form-control" name="city" ng-class="{ 'input-error': contactObj.add.isSubmit && contactForm.city.$error.required }" ng-model="contactObj.add.model.city" required="true" type="text">
+                            </input>
+                        </div>
+                          <div class="col-md-4 mb-3">
+                            <label>
+                                State
+                            </label>
+                            <span class="required">
+                                *
+                            </span>
+                            <input class="form-control" name="state" ng-class="{ 'input-error': contactObj.add.isSubmit && contactForm.state.$error.required }" ng-model="contactObj.add.model.state" required="true" type="text">
+                            </input>
+                        </div>
+                         <div class="col-md-4 mb-3">
+                            <label>
+                                Country
+                            </label>
+                            <span class="required">
+                                *
+                            </span>
+                            <input class="form-control" name="country" ng-class="{ 'input-error': contactObj.add.isSubmit && contactForm.country.$error.required }" ng-model="contactObj.add.model.country" required="true" type="text">
+                            </input>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label>
+                                Landmark
+                            </label>
+                            <span class="required">
+                                *
+                            </span>
+                            <input class="form-control" name="landmark" ng-class="{ 'input-error': contactObj.add.isSubmit && contactForm.landmark.$error.required }" ng-model="contactObj.add.model.landmark" required="true" type="text">
+                            </input>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label>
+                                Mobile
+                            </label>
+                            <span class="required">
+                                *
+                            </span>
+                            <input class="form-control" name="mobile" ng-class="{ 'input-error': contactObj.add.isSubmit && contactForm.mobile.$error.required }" ng-model="contactObj.add.model.mobile" required="true" type="text">
+                            </input>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label>
+                                Landline
+                            </label>
+                            <input class="form-control" name="landline" ng-class="{ 'input-error': contactObj.add.isSubmit && contactForm.landline.$error.required }" ng-model="contactObj.add.model.landline" type="text">
+                            </input>
+                        </div>
+                         <div class="col-md-4 mb-3">
+                            <label>
+                                Alternate Number
+                            </label>
+                            <span class="required">
+                                *
+                            </span>
+                            <input class="form-control" name="alternate_number" ng-class="{ 'input-error': contactObj.add.isSubmit && contactForm.alternate_number.$error.required }" ng-model="contactObj.add.model.alternate_number" type="text" required="true">
+                            </input>
+                        </div>
+                         <div class="col-md-4 mb-3">
+                            <label>
+                                Pay Term Number
+                            </label>
+                            <span class="required">
+                                *
+                            </span>
+                            <input class="form-control" name="pay_term_number" ng-class="{ 'input-error': contactObj.add.isSubmit && contactForm.pay_term_number.$error.required }" ng-model="contactObj.add.model.pay_term_number" type="number" required="true">
+                            </input>
+                        </div>
+                         <div class="col-md-4 mb-3">
+                                <label>
+                                      Pay Term Type
+                                </label>
+                                <span class="required">
+                                    *
+                                </span>
+                                 <select class="form-control" name="pay_term_type" ng-class="{ 'input-error': contactObj.add.isSubmit && contactForm.pay_term_type.$error.required }" ng-model="contactObj.add.model.pay_term_type" ng-required="true">
+                                <option value="">
+                                    -- Select Pay Term Type --
+                                </option>
+                                <option value="days">
+                                   Days
+                                </option>
+                                 <option value="months">
+                                   Months
+                                </option>
+                                </select>
+                        </div>
+                         <div class="col-md-4 mb-3">
+                            <label>
+                                Credit Limit
+                            </label>                            
+                            <input class="form-control" name="credit_limit" ng-class="{ 'input-error': contactObj.add.isSubmit && contactForm.credit_limit.$error.required }" ng-model="contactObj.add.model.credit_limit" type="text">
+                            </input>
+                        </div>
+                         <div class="col-md-4 mb-3">
+                                <label>
+                                   Select Customer Group
+                                </label>
+                                <span class="required">
+                                    *
+                                </span>
+                                 <select class="form-control" name="customer_group_id" ng-class="{ 'input-error': contactObj.add.isSubmit && productForm.customer_group_id.$error.required }" ng-model="contactObj.add.model.customer_group_id" ng-required="true">
+                                <option value="">
+                                    -- Select Group --
+                                </option>
+                                <option value="{{p._id}}"  ng-repeat="p in contactObj.cusgrouplist">
+                                   {{p.name}}
+                                </option>
+                                </select>
+                        </div>
+                         <div class="col-md-4 mb-3">
+                            <label>
+                                Custom Field 1
+                            </label>                            
+                            <input class="form-control" name="custom_field1" ng-class="{ 'input-error': contactObj.add.isSubmit && contactForm.custom_field1.$error.required }" ng-model="contactObj.add.model.custom_field1" type="text">
+                            </input>
+                        </div>
+                         <div class="col-md-4 mb-3">
+                            <label>
+                                 Custom Field 2
+                            </label>                            
+                            <input class="form-control" name="custom_field2" ng-class="{ 'input-error': contactObj.add.isSubmit && contactForm.custom_field2.$error.required }" ng-model="contactObj.add.model.custom_field2" type="text">
+                            </input>
+                        </div>
+                         <div class="col-md-4 mb-3">
+                            <label>
+                                 Custom Field 3
+                            </label>                            
+                            <input class="form-control" name="custom_field3" ng-class="{ 'input-error': contactObj.add.isSubmit && contactForm.custom_field3.$error.required }" ng-model="contactObj.add.model.custom_field3" type="text">
+                            </input>
+                        </div> 
+                        <div class="col-md-4 mb-3">
+                            <label>
+                                 Custom Field 4
+                            </label>                            
+                            <input class="form-control" name="custom_field4" ng-class="{ 'input-error': contactObj.add.isSubmit && contactForm.custom_field4.$error.required }" ng-model="contactObj.add.model.custom_field4" type="text">
+                            </input>
+                        </div>
+                         <div class="col-md-4 mt-4">
+                            <div class="custom-control custom-checkbox">
+                            <input id="customCheck6" type="checkbox" class="custom-control-input" ng-class="{ 'input-error': contactObj.add.isSubmit && contactForm.is_default.$error.required }" ng-model="contactObj.add.model.is_default">
+                            <label for="customCheck6" class="custom-control-label">Is Default</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="w-100">
+                    <button class="btn btn-primary float-right" ng-click="contactObj.add.submit(contactForm)" ng-disabled="contactObj.add.isReqSent" type="submit">
+                        Save
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Confirm Model -->
+<div aria-hidden="true" class="modal fade text-left" data-backdrop="static" data-keyboard="false" id="removecontactData" role="dialog" tabindex="-1">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">
+                    Confirm Remove
+                </h4>
+                <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+                    <span aria-hidden="true">
+                        ×
+                    </span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="col-md-12 order-md-1">
+                    Are you sure you want to delete this record?
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="w-100">
+                    <button class="btn btn-primary float-right" ng-click="customerObj.remove.removeData()">
+                        Yes
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
