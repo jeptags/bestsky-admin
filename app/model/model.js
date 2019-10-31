@@ -802,6 +802,7 @@ var products = new Schema({
     type: String, //enum('single','variable','modifier')
     unit_id: String,
     brand_id: String,
+    batch_id: String,
     category_id: String,
     sub_category_id: String,
     tax: Number,
@@ -809,6 +810,7 @@ var products = new Schema({
     enable_stock: Number,
     alert_quantity: Number,
     sku: String,
+    barcode: String,
     barcode_type: String, //enum('C39','C128','EAN13','EAN8','UPCA','UPCE')
     expiry_period: Number,
     expiry_period_type: String, // enum('days','months') 
@@ -818,7 +820,15 @@ var products = new Schema({
     product_custom_field2: String,
     product_custom_field3: String,
     product_custom_field4: String,
+    url: String,
     image: String,
+    latitude: String,
+    longitude: String,
+    salemode: String, // enum
+    ship: String, // enum
+    productview: String, // enum
+    description: String,
+    short_description: String,
     created_by: Number,
     created_at: Date,
     updated_at: Date,

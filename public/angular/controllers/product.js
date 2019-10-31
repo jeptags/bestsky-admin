@@ -36,36 +36,133 @@ appModule.controller('ProductController', ['$scope', '$http', '$location', '$uib
         $scope.productObj.init();
         $scope.productObj.add = {};
         $scope.productObj.categorylist = {};
+        $scope.productObj.subcategorylist = {};
         $scope.productObj.businesslist = {};
         $scope.productObj.brandlist = {};
-        $scope.productObj.subcatlist = {};
+        $scope.productObj.batchlist = {};
         $scope.productObj.unitlist = {};
         // $scope.productObj.subcatlistfinal = {};
         $scope.productObj.add.openModal = function(row) {
             $scope.productObj.add.model = {};
 
             icdb.getCondition('categories', {}, function(response) {
-            $scope.productObj.categorylist = response;
-             });
+                if (response.length) {
+                    $scope.productObj.categorylist = response;
+                } else { 
+                    // set default category list to complete the functionality.
+                    // I have not category in database.
+                    // I will fetch it from mongodb after.
+                    $scope.productObj.categorylist = [
+                        {
+                            _id: 1,
+                            name: "Category 1"
+                        },
+                        {
+                            _id: 2,
+                            name: "Category 2"
+                        },
+                        {
+                            _id: 3,
+                            name: "Category 3"
+                        }
+                    ]
+                }
+            });
 
             icdb.getCondition('business', {}, function(response) {
-            $scope.productObj.businesslist = response;
-             });
+                (response.length) ? 
+                    ($scope.productObj.businesslist = response) : (
+                        // set default category list to complete the functionality.
+                        // I have not category in database.
+                        // I will fetch it from mongodb after.
+                        $scope.productObj.businesslist = [
+                            {
+                                _id: 1,
+                                name: "Business 1"
+                            },
+                            {
+                                _id: 2,
+                                name: "Business 2"
+                            },
+                            {
+                                _id: 3,
+                                name: "Business 3"
+                            }
+                        ]
+                    );
+            });
 
             icdb.getCondition('units', {}, function(response) {               
-            $scope.productObj.unitlist = response;
-             });
+                (response.length) ? 
+                    ($scope.productObj.unitlist = response) : 
+                    (
+                        // set default category list to complete the functionality.
+                        // I have not category in database.
+                        // I will fetch it from mongodb after.
+                        $scope.productObj.unitlist = [
+                        {
+                            _id: 1,
+                            actual_name: "Unit 1"
+                        },
+                        {
+                            _id: 2,
+                            actual_name: "Unit 2"
+                        },
+                        {
+                            _id: 3,
+                            actual_name: "Unit 3"
+                        }
+                    ]);
+            });
 
             icdb.getCondition('brands', {}, function(response) {
-            $scope.productObj.brandlist = response;
-             }); 
+                (response.length) ? ($scope.productObj.brandlist = response) : (
+                       // set default category list to complete the functionality.
+                        // I have not category in database.
+                        // I will fetch it from mongodb after.
+                        $scope.productObj.brandlist = [
+                            {
+                                _id: 1,
+                                name: "Brand 1"
+                            },
+                            {
+                                _id: 2,
+                                name: "Brand 2"
+                            },
+                            {
+                                _id: 3,
+                                name: "Brand 3"
+                            }
+                        ]
+                );
+            });  
 
             icdb.getCondition('SubCategory', {}, function(response) {
-            $scope.productObj.subcatlist = response;
-             });
+                (response.length) ? ($scope.productObj.subcatlist = response) : (
+                    // set default category list to complete the functionality.
+                    // I have not category in database.
+                    // I will fetch it from mongodb after.
+                    $scope.productObj.subcatlist = [
+                        {
+                            _id: 1,
+                            name: "Sub Category 1"
+                        },
+                        {
+                            _id: 2,
+                            name: "Sub Category 2"
+                        },
+                        {
+                            _id: 3,
+                            name: "Sub Category 3"
+                        }
+                    ]
+                );
+            });
 
-            
-             if (row && row._id) {
+            console.log("rrrrrrrrrrrrrrrrrrrr");
+            console.log(row);
+    
+            if (row && row._id) {
                 $scope.productObj.add.model = angular.copy(row);
             }
 

@@ -4,13 +4,9 @@
     <div class="modal-dialog modal-lg employeemodal" role="document">
         <div class="modal-content" ng-form="productForm">
             <div class="modal-header">
-                <h4 class="modal-title">
-                    Product Details
-                </h4>
+                <h4 class="modal-title"> Product Details </h4>
                 <button aria-label="Close" class="close" data-dismiss="modal" type="button">
-                    <span aria-hidden="true">
-                        ×
-                    </span>
+                    <span aria-hidden="true"> × </span>
                 </button>
             </div>
             <div class="modal-body">
@@ -18,292 +14,293 @@
                     <div class="col-md-12 order-md-1">                        
                         <div class="row">
                             <div class="col-md-3 mb-3">
-                                <label>
-                                    Product Name 
-                                </label>
-                                <span class="required">
-                                    * 
-                                </span>
-                                <input class="form-control" name="name" ng-class="{ 'input-error': productObj.add.isSubmit && productForm.name.$error.required }" ng-model="productObj.add.model.name" required="true" type="text">
-                                </input>
+                                <label> Product Name </label>
+                                <span class="required"> * </span>
+                                <input class="form-control" name="name" 
+                                    ng-class="{ 'input-error': productObj.add.isSubmit && productForm.name.$error.required }" 
+                                    ng-model="productObj.add.model.name" required="true" type="text" />
                             </div>
                             <div class="col-md-3 mb-3">
-                                <label>
-                                   Select Business
-                                </label>
-                                <span class="required">
-                                    *
-                                </span>
-                                 <select class="form-control" name="business_id" ng-class="{ 'input-error': productObj.add.isSubmit && productForm.business_id.$error.required }" ng-model="productObj.add.model.business_id" ng-required="true">
-                                <option value="">
-                                    -- Select Business --
-                                </option>
-                                <option value="{{p._id}}"  ng-repeat="p in productObj.businesslist">
-                                   {{p.name}}
-                                </option>
+                                <label> Select Business </label>
+                                <span class="required"> * </span>
+                                <select class="form-control" name="business_id" ng-class="{ 'input-error': productObj.add.isSubmit && productForm.business_id.$error.required }" ng-model="productObj.add.model.business_id" ng-required="true">
+                                    <option value="">
+                                        -- Select Business --
+                                    </option>
+                                    <option value="{{p._id}}"  ng-repeat="p in productObj.businesslist"> {{p.name}} </option>
                                 </select>
                             </div>
                             <div class="col-md-3 mb-3">
-                                <label>
-                                   Type
-                                </label>
-                                <span class="required">
-                                    *
-                                </span>
-                                 <select class="form-control" name="type" ng-class="{ 'input-error': productObj.add.isSubmit && productForm.type.$error.required }" ng-model="productObj.add.model.type" ng-required="true">
-                                <option value="">
-                                    -- Select Type --
-                                </option>
-                                <option value="Single">
-                                   Single
-                                </option>
-                                 <option value="Variable">
-                                   Variable
-                                </option>
-                                 <option value="Modifier">
-                                   Modifier
-                                </option>
+                                <label> Type </label>
+                                <span class="required"> * </span>
+                                <select class="form-control" name="type" ng-class="{ 'input-error': productObj.add.isSubmit && productForm.type.$error.required }" ng-model="productObj.add.model.type" ng-required="true">
+                                    <option value="">
+                                        -- Select Type --
+                                    </option>
+                                    <option value="Single"> Single </option>
+                                    <option value="Variable"> Variable </option>
+                                    <option value="Modifier"> Modifier </option>
                                 </select>
                             </div>
                             <div class="col-md-3 mb-3">
-                                <label>
-                                   Select Unit
-                                </label>
-                                <span class="required">
-                                    *
-                                </span>
-                                 <select class="form-control" name="unit_id" ng-class="{ 'input-error': productObj.add.isSubmit && productForm.unit_id.$error.required }" ng-model="productObj.add.model.unit_id" ng-required="true">
-                                <option value="">
-                                    -- Select Unit --
-                                </option>
-                                <option value="{{p._id}}"  ng-repeat="p in productObj.unitlist">
-                                   {{p.actual_name}}
-                                </option>
+                                <label> Select Unit </label>
+                                <span class="required"> * </span>
+                                <select class="form-control" name="unit_id" ng-class="{ 'input-error': productObj.add.isSubmit && productForm.unit_id.$error.required }" ng-model="productObj.add.model.unit_id" ng-required="true">
+                                    <option value="">
+                                        -- Select Unit --
+                                    </option>
+                                    <option value="{{p._id}}"  ng-repeat="p in productObj.unitlist"> {{p.actual_name}} </option>
                                 </select>
                             </div>
                             <div class="col-md-3 mb-3">
-                                <label>
-                                   Select Brand
-                                </label>
-                                <span class="required">
-                                    *
-                                </span>
-                                 <select class="form-control" name="brand_id" ng-class="{ 'input-error': productObj.add.isSubmit && productForm.brand_id.$error.required }" ng-model="productObj.add.model.brand_id" ng-required="true">
-                                <option value="">
-                                    -- Select Brand --
-                                </option>
-                                <option value="{{p._id}}"  ng-repeat="p in productObj.brandlist">
-                                   {{p.name}}
-                                </option>
+                                <label> Select Brand </label>
+                                <span class="required"> * </span>
+                                <select class="form-control" name="brand_id" ng-class="{ 'input-error': productObj.add.isSubmit && productForm.brand_id.$error.required }" ng-model="productObj.add.model.brand_id" ng-required="true">
+                                    <option value="">
+                                        -- Select Brand --
+                                    </option>
+                                    <option value="{{p._id}}"  ng-repeat="p in productObj.brandlist"> {{p.name}} </option>
                                 </select>
                             </div>
                             <div class="col-md-3 mb-3">
-                                <label>
-                                   Select Category
-                                </label>
-                                <span class="required">
-                                    *
-                                </span>
-                                 <select class="form-control" name="category_id" ng-class="{ 'input-error': productObj.add.isSubmit && productForm.category_id.$error.required }" ng-model="productObj.add.model.category_id" ng-required="true">
-                                <option value="">
-                                    -- Select Category --
-                                </option>
-                                <option value="{{p._id}}"  ng-repeat="p in productObj.categorylist">
-                                   {{p.name}}
-                                </option>
+                                <label> Select Batch </label>
+                                <span class="required"> * </span>
+                                <select class="form-control" name="batch_id" ng-class="{ 'input-error': productObj.add.isSubmit && productForm.batch_id.$error.required }" ng-model="productObj.add.model.batch_id" ng-required="true">
+                                    <option value="">
+                                        -- Select Batch --
+                                    </option>
+                                    <option value="1"> Batch 1 </option>
+                                    <option value="2"> Batch 2 </option>
+                                    <option value="3"> Batch 3 </option>
+                                </select>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label> Select Category </label>
+                                <span class="required"> * </span>
+                                <select class="form-control" name="category_id" ng-class="{ 'input-error': productObj.add.isSubmit && productForm.category_id.$error.required }" ng-model="productObj.add.model.category_id" ng-required="true">
+                                    <option value="">
+                                        -- Select Category --
+                                    </option>
+                                    <option value="{{p._id}}"  ng-repeat="p in productObj.categorylist">  {{p.name}} </option>
                                 </select>
                             </div>
                              <div class="col-md-3 mb-3">
-                                <label>
-                                   Select Sub Category
-                                </label>
-                                <span class="required">
-                                    *
-                                </span>
-                                 <select class="form-control" name="sub_category_id" ng-class="{ 'input-error': productObj.add.isSubmit && productForm.sub_category_id.$error.required }" ng-model="productObj.add.model.sub_category_id" ng-required="true">
-                                <option value="">
-                                    -- Select Sub Category --
-                                </option>
-                                <option value="{{p._id}}"  ng-repeat="p in productObj.subcatlist">
-                                   {{p.Name}}
-                                </option>
+                                <label> Select Sub Category </label>
+                                <span class="required"> * </span>
+                                <select class="form-control" name="sub_category_id" ng-class="{ 'input-error': productObj.add.isSubmit && productForm.sub_category_id.$error.required }" ng-model="productObj.add.model.sub_category_id" ng-required="true">
+                                    <option value="">
+                                        -- Select Sub Category --
+                                    </option>
+                                    <option value="{{p._id}}"  ng-repeat="p in productObj.subcatlist"> {{p.name}} </option>
                                 </select>
                             </div>
                             <div class="col-md-3 mb-3">
-                                <label>
-                                    Tax
-                                </label>
-                                <span class="required">
-                                    *
-                                </span>
-                                <input class="form-control" name="tax" ng-class="{ 'input-error': productObj.add.isSubmit && productForm.tax.$error.required }" ng-model="productObj.add.model.tax" type="number" required="true">
-                                </input>
+                                <label> URL </label>
+                                <span class="required"> * </span>                          
+                                <input class="form-control" name="url" 
+                                    ng-class="{ 'input-error': productObj.add.isSubmit && productForm.url.$error.required }" 
+                                    ng-model="productObj.add.model.url" type="text" required="true" />
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label> Image </label>
+                                <span class="required"> * </span>
+                                <input class="form-control" name="image" 
+                                    ng-class="{ 'input-error': productObj.add.isSubmit && productForm.image.$error.required }" 
+                                    ng-model="productObj.add.model.image" type="text" required="true" />
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label> Latitude </label>
+                                <span class="required"> * </span>
+                                <input class="form-control" name="latitude" 
+                                    ng-class="{ 'input-error': productObj.add.isSubmit && productForm.latitude.$error.required }" 
+                                    ng-model="productObj.add.model.latitude" type="text" required="true" />
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label> Longitude </label>
+                                <span class="required"> * </span>
+                                <input class="form-control" name="longitude" 
+                                    ng-class="{ 'input-error': productObj.add.isSubmit && productForm.longitude.$error.required }" 
+                                    ng-model="productObj.add.model.longitude" type="text" required="true" />
+                            </div>
+                            
+                            <div class="col-md-3 mb-3">
+                                <label> Barcode </label>
+                                <span class="required"> * </span>                     
+                                <input class="form-control" name="barcode" 
+                                    ng-class="{ 'input-error': productObj.add.isSubmit && productForm.barcode.$error.required }" 
+                                    ng-model="productObj.add.model.barcode" type="text" required="true" />
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label> Barcode Type </label>
+                                <span class="required"> * </span>
+                                <select class="form-control" name="barcode_type" ng-class="{ 'input-error': productObj.add.isSubmit && productForm.barcode_type.$error.required }" ng-model="productObj.add.model.barcode_type" ng-required="true">
+                                    <option value="">
+                                        -- Select Barcode Type --
+                                    </option>
+                                    <option value="C39"> C39 </option>
+                                    <option value="C128"> C128 </option> 
+                                    <option value="EAN13"> EAN13 </option> 
+                                    <option value="EAN8"> EAN8 </option> 
+                                    <option value="UPCA"> UPCA </option>
+                                    <option value="UPCE"> UPCE </option>
+                                </select>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label> Tax </label>
+                                <span class="required"> * </span>
+                                <input class="form-control" name="tax" 
+                                    ng-class="{ 'input-error': productObj.add.isSubmit && productForm.tax.$error.required }" 
+                                    ng-model="productObj.add.model.tax" type="number" required="true" />
                             </div>
                              <div class="col-md-3 mb-3">
-                                <label>
-                                   Tax Type
-                                </label>
-                                <span class="required">
-                                    *
-                                </span>
-                                 <select class="form-control" name="tax_type" ng-class="{ 'input-error': productObj.add.isSubmit && productForm.tax_type.$error.required }" ng-model="productObj.add.model.tax_type" ng-required="true">
-                                <option value="">
-                                    -- Select Tax Type --
-                                </option>
-                                <option value="Inclusive">
-                                   Inclusive
-                                </option>
-                                 <option value="Exclusive">
-                                   Exclusive
-                                </option>
+                                <label> Tax Type </label>
+                                <span class="required"> * </span>
+                                <select class="form-control" name="tax_type" ng-class="{ 'input-error': productObj.add.isSubmit && productForm.tax_type.$error.required }" ng-model="productObj.add.model.tax_type" ng-required="true">
+                                    <option value="">
+                                        -- Select Tax Type --
+                                    </option>
+                                    <option value="Inclusive"> Inclusive </option>
+                                    <option value="Exclusive"> Exclusive </option>
                                 </select>
                             </div>
-                              <div class="col-md-3 mb-3">
-                                <label>
-                                    Enable Stock
-                                </label>
-                                <span class="required">
-                                    *
-                                </span>
-                                <input class="form-control" name="enable_stock" ng-class="{ 'input-error': productObj.add.isSubmit && productForm.enable_stock.$error.required }" ng-model="productObj.add.model.enable_stock" type="number" required="true">
-                                </input>
+                            
+                            <div class="col-md-3 mb-3">
+                                <label> Sku </label>
+                                <span class="required"> * </span>                            
+                                <input class="form-control" name="sku" 
+                                    ng-class="{ 'input-error': productObj.add.isSubmit && productForm.sku.$error.required }" 
+                                    ng-model="productObj.add.model.sku" type="text" required="true" />
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label> Enable Stock </label>
+                                <span class="required"> * </span>
+                                <input class="form-control" name="enable_stock" 
+                                    ng-class="{ 'input-error': productObj.add.isSubmit && productForm.enable_stock.$error.required }" 
+                                    ng-model="productObj.add.model.enable_stock" type="number" required="true" />
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label> Enable Sr No </label>
+                                <span class="required"> * </span>
+                                <input class="form-control" name="enable_sr_no" 
+                                    ng-class="{ 'input-error': productObj.add.isSubmit && productForm.enable_sr_no.$error.required }" 
+                                    ng-model="productObj.add.model.enable_sr_no" type="number" required="true" />
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label> Alert Quantity </label>
+                                <span class="required"> * </span>
+                                <input class="form-control" name="alert_quantity" 
+                                    ng-class="{ 'input-error': productObj.add.isSubmit && productForm.alert_quantity.$error.required }" 
+                                    ng-model="productObj.add.model.alert_quantity" type="number" required="true" />
+                            </div>
+                            
+                             
+                            <div class="col-md-3 mb-3">
+                                <label> Expiry Period </label>
+                                <span class="required"> * </span>
+                                <input class="form-control" name="expiry_period" 
+                                    ng-class="{ 'input-error': productObj.add.isSubmit && productForm.expiry_period.$error.required }" 
+                                    ng-model="productObj.add.model.expiry_period" type="number" required="true" />
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label> Expiry Period Type </label>
+                                <span class="required"> * </span>
+                                <select class="form-control" name="expiry_period_type" ng-class="{ 'input-error': productObj.add.isSubmit && productForm.expiry_period_type.$error.required }" ng-model="productObj.add.model.expiry_period_type" ng-required="true">
+                                    <option value="">
+                                        -- Select Expiry Period Type --
+                                    </option>
+                                    <option value="Days"> Days </option>
+                                    <option value="Months"> Months </option> 
+                                </select>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label> Select Sale Mode </label>
+                                <span class="required"> * </span>
+                                <select class="form-control" name="salemode" ng-class="{ 'input-error': productObj.add.isSubmit && productForm.salemode.$error.required }" ng-model="productObj.add.model.salemode" ng-required="true">
+                                    <option value="">
+                                        -- Select Sale Mode --
+                                    </option>
+                                    <option value="1"> SaleMode 1 </option>
+                                    <option value="2"> SaleMode 2 </option>
+                                    <option value="3"> SaleMode 3 </option>
+                                </select>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label> Ship </label>
+                                <span class="required"> * </span>
+                                <select class="form-control" name="ship" ng-class="{ 'input-error': productObj.add.isSubmit && productForm.ship.$error.required }" ng-model="productObj.add.model.ship" ng-required="true">
+                                    <option value="">
+                                        -- Select Ship --
+                                    </option>
+                                    <option value="air"> Air </option>
+                                    <option value="road"> Ship </option>
+                                </select>
                             </div>
                             <div class="col-md-3 mb-3">
                                 <label>
-                                    Alert Quantity
-                                </label>
-                                <span class="required">
-                                    *
-                                </span>
-                                <input class="form-control" name="alert_quantity" ng-class="{ 'input-error': productObj.add.isSubmit && productForm.alert_quantity.$error.required }" ng-model="productObj.add.model.alert_quantity" type="number" required="true">
-                                </input>
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label>
-                                    Sku
+                                    Product Custom Field 1
                                 </label>                              
-                                <input class="form-control" name="sku" ng-class="{ 'input-error': productObj.add.isSubmit && productForm.sku.$error.required }" ng-model="productObj.add.model.sku" type="text">
-                                </input>
+                                <input class="form-control" name="product_custom_field1" 
+                                    ng-class="{ 'input-error': productObj.add.isSubmit && productForm.product_custom_field1.$error.required }" 
+                                    ng-model="productObj.add.model.product_custom_field1" type="text" />
                             </div>
                              <div class="col-md-3 mb-3">
                                 <label>
-                                   Barcode Type
+                                    Product Custom Field 2
                                 </label>
-                                <span class="required">
-                                    *
-                                </span>
-                                 <select class="form-control" name="barcode_type" ng-class="{ 'input-error': productObj.add.isSubmit && productForm.barcode_type.$error.required }" ng-model="productObj.add.model.barcode_type" ng-required="true">
-                                <option value="">
-                                    -- Select Barcode Type --
-                                </option>
-                                <option value="C39">
-                                   C39
-                                </option>
-                                 <option value="C128">
-                                   C128
-                                </option> 
-                                <option value="EAN13">
-                                   EAN13
-                                </option> 
-                                <option value="EAN8">
-                                   EAN8
-                                </option> 
-                                <option value="UPCA">
-                                   UPCA
-                                </option>
-                                <option value="UPCE">
-                                   UPCE
-                                </option>
+                                <input class="form-control" name="product_custom_field2" 
+                                    ng-class="{ 'input-error': productObj.add.isSubmit && productForm.product_custom_field2.$error.required }" 
+                                    ng-model="productObj.add.model.product_custom_field2" type="text" />
+                            </div>
+                             <div class="col-md-3 mb-3">
+                                <label>
+                                    Product Custom Field 3
+                                </label>
+                                <input class="form-control" name="product_custom_field3" 
+                                    ng-class="{ 'input-error': productObj.add.isSubmit && productForm.product_custom_field3.$error.required }" 
+                                    ng-model="productObj.add.model.product_custom_field3" type="text" />
+                            </div>
+                             <div class="col-md-3 mb-3">
+                                <label>
+                                    Product Custom Field 4
+                                </label>
+                                <input class="form-control" name="product_custom_field4" 
+                                    ng-class="{ 'input-error': productObj.add.isSubmit && productForm.product_custom_field4.$error.required }" 
+                                    ng-model="productObj.add.model.product_custom_field4" type="text" />
+                            </div>
+                            
+                            <div class="col-md-3 mb-3">
+                                <label> Weight </label>
+                                <span class="required"> * </span>
+                                <input class="form-control" name="weight" 
+                                    ng-class="{ 'input-error': productObj.add.isSubmit && productForm.weight.$error.required }" 
+                                    ng-model="productObj.add.model.weight" type="text" required="true" />
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label> Select Product View </label>
+                                <span class="required"> * </span>
+                                <select class="form-control" name="productview" ng-class="{ 'input-error': productObj.add.isSubmit && productForm.productview.$error.required }" ng-model="productObj.add.model.productview" ng-required="true">
+                                    <option value="">
+                                        -- Select Product View --
+                                    </option>
+                                    <option value="1"> Product View 1 </option>
+                                    <option value="2"> Product View 2 </option>
+                                    <option value="3"> Product View 3 </option>
                                 </select>
                             </div>
-                            <div class="col-md-3 mb-3">
-                                <label>
-                                    Expiry Period
-                                </label>
-                                <span class="required">
-                                    *
-                                </span>
-                                <input class="form-control" name="expiry_period" ng-class="{ 'input-error': productObj.add.isSubmit && productForm.expiry_period.$error.required }" ng-model="productObj.add.model.expiry_period" type="number" required="true">
-                                </input>
+                            <div class="col-md-3 mb-3"></div>
+                            <div class="col-md-6 mb-3">
+                                <label> Description </label>
+                                <span class="required"> * </span>
+                                <textarea class="form-control" 
+                                    name="description" 
+                                    ng-class="{ 'input-error': productObj.add.isSubmit && productForm.description.$error.required }"
+                                    cols="50" rows="5"
+                                    required="true"></textarea>
                             </div>
-                            <div class="col-md-3 mb-3">
-                                <label>
-                                   Expiry Period Type
-                                </label>
-                                <span class="required">
-                                    *
-                                </span>
-                                 <select class="form-control" name="expiry_period_type" ng-class="{ 'input-error': productObj.add.isSubmit && productForm.expiry_period_type.$error.required }" ng-model="productObj.add.model.expiry_period_type" ng-required="true">
-                                <option value="">
-                                    -- Select Expiry Period Type --
-                                </option>
-                                <option value="Days">
-                                   Days
-                                </option>
-                                 <option value="Months">
-                                   Months
-                                </option> 
-                                </select>
+                            <div class="col-md-6 mb-3">
+                                <label> Short Description </label>
+                                <textarea class="form-control" name="short_description" cols="50" rows="5"></textarea>
                             </div>
-                            <div class="col-md-3 mb-3">
-                                <label>
-                                    Enable Sr No
-                                </label>
-                                <span class="required">
-                                    *
-                                </span>
-                                <input class="form-control" name="enable_sr_no" ng-class="{ 'input-error': productObj.add.isSubmit && productForm.enable_sr_no.$error.required }" ng-model="productObj.add.model.enable_sr_no" type="number" required="true">
-                                </input>
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label>
-                                    Weight
-                                </label>
-                                <span class="required">
-                                    *
-                                </span>
-                                <input class="form-control" name="weight" ng-class="{ 'input-error': productObj.add.isSubmit && productForm.weight.$error.required }" ng-model="productObj.add.model.weight" type="text" required="true">
-                                </input>
-                            </div>
-                             <div class="col-md-3 mb-3">
-                                <label>
-                                    Product Custom Field1
-                                </label>                              
-                                <input class="form-control" name="product_custom_field1" ng-class="{ 'input-error': productObj.add.isSubmit && productForm.product_custom_field1.$error.required }" ng-model="productObj.add.model.product_custom_field1" type="text">
-                                </input>
-                            </div>
-                             <div class="col-md-3 mb-3">
-                                <label>
-                                    Product Custom Field2
-                                </label>
-                                <input class="form-control" name="product_custom_field2" ng-class="{ 'input-error': productObj.add.isSubmit && productForm.product_custom_field2.$error.required }" ng-model="productObj.add.model.product_custom_field2" type="text">
-                                </input>
-                            </div>
-                             <div class="col-md-3 mb-3">
-                                <label>
-                                    Product Custom Field3
-                                </label>
-                                <input class="form-control" name="product_custom_field3" ng-class="{ 'input-error': productObj.add.isSubmit && productForm.product_custom_field3.$error.required }" ng-model="productObj.add.model.product_custom_field3" type="text">
-                                </input>
-                            </div>
-                             <div class="col-md-3 mb-3">
-                                <label>
-                                    Product Custom Field4
-                                </label>
-                                <input class="form-control" name="product_custom_field4" ng-class="{ 'input-error': productObj.add.isSubmit && productForm.product_custom_field4.$error.required }" ng-model="productObj.add.model.product_custom_field4" type="text">
-                                </input>
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label>
-                                   Image
-                                </label>
-                                <span class="required">
-                                    *
-                                </span>
-                                <input class="form-control" name="image" ng-class="{ 'input-error': productObj.add.isSubmit && productForm.image.$error.required }" ng-model="productObj.add.model.image" type="text">
-                                </input>
-                            </div>
-                           
                         </div>
                     </div>
                 </div>
@@ -2433,26 +2430,22 @@
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content" ng-form="unitForm">
             <div class="modal-header">
-                <h4 class="modal-title">
-                    Unit Details
-                </h4>
+                <h4 class="modal-title"> Unit Details </h4>
                 <button aria-label="Close" class="close" ng-click="unitObj.add.closeModal()">
-                    <span aria-hidden="true">
-                        ×
-                    </span>
+                    <span aria-hidden="true"> × </span>
                 </button>
             </div>
             <div class="modal-body">
                 <div class="col-md-12 order-md-1">
                     <div class="row">
                         <div class="col-md-6 mb-3">
-                                <label>
-                                   Select Business
-                                </label>
-                                <span class="required">
-                                    *
-                                </span>
-                                 <select class="form-control" name="business_id" ng-class="{ 'input-error': unitObj.add.isSubmit && unitForm.business_id.$error.required }" ng-model="unitObj.add.model.business_id" ng-required="true">
+                            <label>
+                                Select Business
+                            </label>
+                            <span class="required">
+                                *
+                            </span>
+                            <select class="form-control" name="business_id" ng-class="{ 'input-error': unitObj.add.isSubmit && unitForm.business_id.$error.required }" ng-model="unitObj.add.model.business_id" ng-required="true">
                                 <option value="">
                                     -- Select Business --
                                 </option>
@@ -2506,13 +2499,9 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">
-                    Confirm Remove
-                </h4>
+                <h4 class="modal-title"> Confirm Remove </h4>
                 <button aria-label="Close" class="close" data-dismiss="modal" type="button">
-                    <span aria-hidden="true">
-                        ×
-                    </span>
+                    <span aria-hidden="true"> × </span>
                 </button>
             </div>
             <div class="modal-body">
@@ -2537,250 +2526,158 @@
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content" ng-form="contactForm">
             <div class="modal-header">
-                <h4 class="modal-title">
-                    Contact Details
-                </h4>
+                <h4 class="modal-title"> Contact Details </h4>
                 <button aria-label="Close" class="close" ng-click="contactObj.add.closeModal()">
-                    <span aria-hidden="true">
-                        ×
-                    </span>
+                    <span aria-hidden="true"> × </span>
                 </button>
             </div>
             <div class="modal-body">
                 <div class="col-md-12 order-md-1">
                     <div class="row">
                         <div class="col-md-4 mb-3">
-                                <label>
-                                   Select Business
-                                </label>
-                                <span class="required">
-                                    *
-                                </span>
-                                 <select class="form-control" name="business_id" ng-class="{ 'input-error': contactObj.add.isSubmit && productForm.business_id.$error.required }" ng-model="contactObj.add.model.business_id" ng-required="true">
+                            <label> Select Business </label>
+                            <span class="required"> * </span>
+                            <select class="form-control" name="business_id" ng-class="{ 'input-error': contactObj.add.isSubmit && productForm.business_id.$error.required }" ng-model="contactObj.add.model.business_id" ng-required="true">
                                 <option value="">
                                     -- Select Business --
                                 </option>
                                 <option value="{{p._id}}"  ng-repeat="p in contactObj.businesslist">
                                    {{p.name}}
                                 </option>
-                                </select>
+                            </select>
                         </div>
                         <div class="col-md-4 mb-3">
-                                <label>
-                                      Type
-                                </label>
-                                <span class="required">
-                                    *
-                                </span>
-                                 <select class="form-control" name="type" ng-class="{ 'input-error': contactObj.add.isSubmit && contactForm.type.$error.required }" ng-model="contactObj.add.model.type" ng-required="true">
+                            <label> Type </label>
+                            <span class="required"> * </span>
+                            <select class="form-control" name="type" ng-class="{ 'input-error': contactObj.add.isSubmit && contactForm.type.$error.required }" ng-model="contactObj.add.model.type" ng-required="true">
                                 <option value="">
                                     -- Select Type --
                                 </option>
-                                <option value="supplier">
-                                   Supplier
-                                </option>
-                                 <option value="customer">
-                                   Customer
-                                </option>
-                                 <option value="both">
-                                   Both
-                                </option>
-                                </select>
+                                <option value="supplier"> Supplier </option>
+                                <option value="customer"> Customer </option>
+                                <option value="both"> Both </option>
+                            </select>
                         </div>
                         <div class="col-md-4 mb-3">
-                            <label>
-                                Supplier Business Name
-                            </label>
-                            <span class="required">
-                                *
-                            </span>
+                            <label> Supplier Business Name </label>
+                            <span class="required"> * </span>
                             <input class="form-control" name="supplier_business_name" ng-class="{ 'input-error': contactObj.add.isSubmit && contactForm.supplier_business_name.$error.required }" ng-model="contactObj.add.model.supplier_business_name" required="true" type="text">
                             </input>
                         </div>
                         <div class="col-md-4 mb-3">
-                            <label>
-                                Name
-                            </label>
-                            <span class="required">
-                                *
-                            </span>
+                            <label> Name </label>
+                            <span class="required"> * </span>
                             <input class="form-control" name="name" ng-class="{ 'input-error': contactObj.add.isSubmit && contactForm.name.$error.required }" ng-model="contactObj.add.model.name" required="true" type="text">
                             </input>
                         </div>
                         <div class="col-md-4 mb-3">
-                            <label>
-                                Email
-                            </label>
-                            <span class="required">
-                                *
-                            </span>
+                            <label> Email </label>
+                            <span class="required"> * </span>
                             <input class="form-control" name="email" ng-class="{ 'input-error': contactObj.add.isSubmit && contactForm.email.$error.required }" ng-model="contactObj.add.model.email" required="true" type="text">
                             </input>
                         </div>
                         <div class="col-md-4 mb-3">
-                            <label>
-                                Contact Id
-                            </label>
-                            <span class="required">
-                                *
-                            </span>
+                            <label> Contact Id </label>
+                            <span class="required"> * </span>
                             <input class="form-control" name="contact_id" ng-class="{ 'input-error': contactObj.add.isSubmit && contactForm.contact_id.$error.required }" ng-model="contactObj.add.model.contact_id" required="true" type="text">
                             </input>
                         </div>
                         <div class="col-md-4 mb-3">
-                            <label>
-                               Tax Number
-                            </label>
-                            <span class="required">
-                                *
-                            </span>
-                            <input class="form-control" name="tax_number" ng-class="{ 'input-error': contactObj.add.isSubmit && contactForm.tax_number.$error.required }" ng-model="contactObj.add.model.tax_number" required="true" type="text">
-                            </input>
+                            <label> Tax Number </label>
+                            <span class="required"> * </span>
+                            <input class="form-control" name="tax_number" ng-class="{ 'input-error': contactObj.add.isSubmit && contactForm.tax_number.$error.required }" ng-model="contactObj.add.model.tax_number" required="true" type="text"></input>
                         </div>
                         <div class="col-md-4 mb-3">
-                            <label>
-                                City
-                            </label>
-                            <span class="required">
-                                *
-                            </span>
-                            <input class="form-control" name="city" ng-class="{ 'input-error': contactObj.add.isSubmit && contactForm.city.$error.required }" ng-model="contactObj.add.model.city" required="true" type="text">
-                            </input>
+                            <label> City </label>
+                            <span class="required"> * </span>
+                            <input class="form-control" name="city" ng-class="{ 'input-error': contactObj.add.isSubmit && contactForm.city.$error.required }" ng-model="contactObj.add.model.city" required="true" type="text"></input>
                         </div>
                           <div class="col-md-4 mb-3">
-                            <label>
-                                State
-                            </label>
-                            <span class="required">
-                                *
-                            </span>
+                            <label> State </label>
+                            <span class="required"> * </span>
                             <input class="form-control" name="state" ng-class="{ 'input-error': contactObj.add.isSubmit && contactForm.state.$error.required }" ng-model="contactObj.add.model.state" required="true" type="text">
                             </input>
                         </div>
                          <div class="col-md-4 mb-3">
-                            <label>
-                                Country
-                            </label>
-                            <span class="required">
-                                *
-                            </span>
+                            <label> Country </label>
+                            <span class="required"> * </span>
                             <input class="form-control" name="country" ng-class="{ 'input-error': contactObj.add.isSubmit && contactForm.country.$error.required }" ng-model="contactObj.add.model.country" required="true" type="text">
                             </input>
                         </div>
                         <div class="col-md-4 mb-3">
-                            <label>
-                                Landmark
-                            </label>
-                            <span class="required">
-                                *
-                            </span>
+                            <label> Landmark </label>
+                            <span class="required"> * </span>
                             <input class="form-control" name="landmark" ng-class="{ 'input-error': contactObj.add.isSubmit && contactForm.landmark.$error.required }" ng-model="contactObj.add.model.landmark" required="true" type="text">
                             </input>
                         </div>
                         <div class="col-md-4 mb-3">
-                            <label>
-                                Mobile
-                            </label>
-                            <span class="required">
-                                *
-                            </span>
+                            <label> Mobile </label>
+                            <span class="required"> * </span>
                             <input class="form-control" name="mobile" ng-class="{ 'input-error': contactObj.add.isSubmit && contactForm.mobile.$error.required }" ng-model="contactObj.add.model.mobile" required="true" type="text">
                             </input>
                         </div>
                         <div class="col-md-4 mb-3">
-                            <label>
-                                Landline
-                            </label>
+                            <label> Landline </label>
                             <input class="form-control" name="landline" ng-class="{ 'input-error': contactObj.add.isSubmit && contactForm.landline.$error.required }" ng-model="contactObj.add.model.landline" type="text">
                             </input>
                         </div>
                          <div class="col-md-4 mb-3">
-                            <label>
-                                Alternate Number
-                            </label>
-                            <span class="required">
-                                *
-                            </span>
+                            <label> Alternate Number </label>
+                            <span class="required"> * </span>
                             <input class="form-control" name="alternate_number" ng-class="{ 'input-error': contactObj.add.isSubmit && contactForm.alternate_number.$error.required }" ng-model="contactObj.add.model.alternate_number" type="text" required="true">
                             </input>
                         </div>
                          <div class="col-md-4 mb-3">
-                            <label>
-                                Pay Term Number
-                            </label>
-                            <span class="required">
-                                *
-                            </span>
+                            <label> Pay Term Number </label>
+                            <span class="required"> * </span>
                             <input class="form-control" name="pay_term_number" ng-class="{ 'input-error': contactObj.add.isSubmit && contactForm.pay_term_number.$error.required }" ng-model="contactObj.add.model.pay_term_number" type="number" required="true">
                             </input>
                         </div>
-                         <div class="col-md-4 mb-3">
-                                <label>
-                                      Pay Term Type
-                                </label>
-                                <span class="required">
-                                    *
-                                </span>
-                                 <select class="form-control" name="pay_term_type" ng-class="{ 'input-error': contactObj.add.isSubmit && contactForm.pay_term_type.$error.required }" ng-model="contactObj.add.model.pay_term_type" ng-required="true">
+                        <div class="col-md-4 mb-3">
+                            <label> Pay Term Type </label>
+                            <span class="required"> * </span>
+                            <select class="form-control" name="pay_term_type" ng-class="{ 'input-error': contactObj.add.isSubmit && contactForm.pay_term_type.$error.required }" ng-model="contactObj.add.model.pay_term_type" ng-required="true">
                                 <option value="">
                                     -- Select Pay Term Type --
                                 </option>
-                                <option value="days">
-                                   Days
-                                </option>
-                                 <option value="months">
-                                   Months
-                                </option>
-                                </select>
+                                <option value="days"> Days </option>
+                                <option value="months"> Months </option>
+                            </select>
                         </div>
                          <div class="col-md-4 mb-3">
-                            <label>
-                                Credit Limit
-                            </label>                            
+                            <label> Credit Limit </label>                            
                             <input class="form-control" name="credit_limit" ng-class="{ 'input-error': contactObj.add.isSubmit && contactForm.credit_limit.$error.required }" ng-model="contactObj.add.model.credit_limit" type="text">
                             </input>
                         </div>
                          <div class="col-md-4 mb-3">
-                                <label>
-                                   Select Customer Group
-                                </label>
-                                <span class="required">
-                                    *
-                                </span>
-                                 <select class="form-control" name="customer_group_id" ng-class="{ 'input-error': contactObj.add.isSubmit && productForm.customer_group_id.$error.required }" ng-model="contactObj.add.model.customer_group_id" ng-required="true">
+                            <label> Select Customer Group </label>
+                            <span class="required"> * </span>
+                            <select class="form-control" name="customer_group_id" ng-class="{ 'input-error': contactObj.add.isSubmit && productForm.customer_group_id.$error.required }" ng-model="contactObj.add.model.customer_group_id" ng-required="true">
                                 <option value="">
                                     -- Select Group --
                                 </option>
                                 <option value="{{p._id}}"  ng-repeat="p in contactObj.cusgrouplist">
                                    {{p.name}}
                                 </option>
-                                </select>
+                            </select>
                         </div>
                          <div class="col-md-4 mb-3">
-                            <label>
-                                Custom Field 1
-                            </label>                            
+                            <label> Custom Field 1 </label>                            
                             <input class="form-control" name="custom_field1" ng-class="{ 'input-error': contactObj.add.isSubmit && contactForm.custom_field1.$error.required }" ng-model="contactObj.add.model.custom_field1" type="text">
                             </input>
                         </div>
                          <div class="col-md-4 mb-3">
-                            <label>
-                                 Custom Field 2
-                            </label>                            
+                            <label> Custom Field 2 </label>                            
                             <input class="form-control" name="custom_field2" ng-class="{ 'input-error': contactObj.add.isSubmit && contactForm.custom_field2.$error.required }" ng-model="contactObj.add.model.custom_field2" type="text">
                             </input>
                         </div>
                          <div class="col-md-4 mb-3">
-                            <label>
-                                 Custom Field 3
-                            </label>                            
+                            <label> Custom Field 3 </label>                            
                             <input class="form-control" name="custom_field3" ng-class="{ 'input-error': contactObj.add.isSubmit && contactForm.custom_field3.$error.required }" ng-model="contactObj.add.model.custom_field3" type="text">
                             </input>
                         </div> 
                         <div class="col-md-4 mb-3">
-                            <label>
-                                 Custom Field 4
-                            </label>                            
+                            <label> Custom Field 4 </label>                            
                             <input class="form-control" name="custom_field4" ng-class="{ 'input-error': contactObj.add.isSubmit && contactForm.custom_field4.$error.required }" ng-model="contactObj.add.model.custom_field4" type="text">
                             </input>
                         </div>
