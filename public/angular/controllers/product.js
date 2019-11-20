@@ -158,9 +158,6 @@ appModule.controller('ProductController', ['$scope', '$http', '$location', '$uib
                     ]
                 );
             });
-
-            console.log("rrrrrrrrrrrrrrrrrrrr");
-            console.log(row);
     
             if (row && row._id) {
                 $scope.productObj.add.model = angular.copy(row);

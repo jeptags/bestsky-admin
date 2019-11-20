@@ -23,8 +23,46 @@ appModule.controller('BusinessController', ['$scope', '$http', '$location', '$ui
             $scope.businessObj.add.model.start_date = new Date();
 
             icdb.getCondition('currencies', {}, function(response) {
-            $scope.businessObj.currencylist = response;
-             });
+                if (response.length) {
+                    $scope.businessObj.currencylist = response;
+                } else { // default set data
+                    $scope.businessObj.currencylist = [{
+                        _id: 1,
+                        currency: "USD",
+                    }, {
+                        _id: 2,
+                        currency: "EURO"
+                    }, {
+                        _id: 3,
+                        currency: "IND"
+                    }]
+                }
+                
+            });
+
+            $scope.businessObj.createdbylist = [{
+                _id: 1,
+                name: "User 1",
+            }, {
+                _id: 2,
+                name: "User 2"
+            }, {
+                _id: 3,
+                name: "User 3"
+            }];
+
+            $scope.businessObj.storelist = [{
+                _id: 1,
+                name: "Store 1",
+            }, {
+                _id: 2,
+                name: "Store 2"
+            }, {
+                _id: 3,
+                name: "Store 3"
+            }];
+
+            
             
             if (row && row._id) {
                 $scope.businessObj.add.model = angular.copy(row);

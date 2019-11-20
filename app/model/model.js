@@ -203,9 +203,15 @@ var StoresDetail = new Schema({
     Postscode: String,
     Country: String,
     Phone: String,
+    AlternateNumber: String,
     Fax: String,
     GEOLat: String,
     GEOLong: String,
+    CustomField1: String,
+    CustomField2: String,
+    CustomField3: String,
+    CustomField4: String,
+    IsActive: Boolean,
     createdAt: Date,
     updatedAt: Date,
 });
@@ -309,27 +315,49 @@ var Customer = new Schema({
 mongoose.model('Customer', Customer);
 
 
+// var Tags = new Schema({
+//     Id: String,
+//     TagID: String,
+//     JeptagID: String,
+//     TagType: Number,
+//     SellerID: Number,
+//     BusinessID: Number,
+//     ProductID: Number,
+//     TagLat: Number,
+//     TagLong: Number,
+//     AddessTags: Number,
+//     StatusID: Number,
+//     AddedBy: Number,
+//     Counter: Number,
+//     BatchID: Number,
+//     WarrantyID: Number,
+//     updatedAt: Number,
+//     createdAt: Number,
+// });
+
 var Tags = new Schema({
     Id: String,
     TagID: String,
     JeptagID: String,
-    TagType: Number,
-    SellerID: Number,
-    BusinessID: Number,
-    ProductID: Number,
+    TagType: String,
+    SellerID: String,
+    BusinessID: String,
+    ProductID: String,
     TagLat: Number,
     TagLong: Number,
-    AddessTags: Number,
-    StatusID: Number,
-    AddedBy: Number,
-    BatchID: Number,
-    BatchID: Number,
-    WarrantyID: Number,
+    AddessTags: String,
+    StatusID: String,
+    AddedBy: String,
+    Counter: Number,
+    BatchID: String,
+    WarrantyID: String,
+    CounterChip: String,
+    CounterQRcode: String,
     updatedAt: Number,
     createdAt: Number,
 });
 
-mongoose.model('Tags', Tags);
+mongoose.model('tags', Tags);
 
 // Done
 var Discount = new Schema({
@@ -391,6 +419,25 @@ var brands = new Schema({
 mongoose.model('brands', brands);
 
 // Done
+var batches = new Schema({
+    transactionId: String,
+    productId: String,
+    variationId: String,
+    warrantyId: String,
+    quantity: Number,
+    unitPrice: Number,
+    removedPurchaseLine: Number,
+    lotNoLineId: Number,
+    expiryPeriod: Number,
+    expiryPeriodType: String,
+    enableSrNo: Boolean,
+    createdAt: Date,
+    updatedAt: Date,
+});
+
+mongoose.model('batches', batches);
+
+// Done
 var currencies = new Schema({
     country:String,
     currency: String,
@@ -436,7 +483,9 @@ mongoose.model('expense_categories', expensecategories);
 // Done
 var business = new Schema({
     name:String,
-    currency_id: String,
+    created_by: Number,
+    store_id: Number,
+    currency_id: Number,
     start_date: Date,
     tax_number_1: String,
     tax_label_1: String,

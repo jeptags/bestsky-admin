@@ -23,13 +23,29 @@ appModule.controller('StoreController', ['$scope', '$http', '$location', '$uibMo
             $scope.storeObj.add.model = {};
            
             icdb.getCondition('Company', {}, function(response) {
-            $scope.storeObj.categorylist = response;
-             });
+                if (response.length) {
+                    $scope.storeObj.categorylist = response;
+                } else {
+                    $scope.storeObj.categorylist = [{
+                        _id: 1,
+                        CompanyName: "Company 1"
+                    }, {
+                        _id: 2,
+                        CompanyName: "Company 2"
+                    },{
+                        _id: 3,
+                        CompanyName: "Company 3"
+                    }]
+                }
+            });
+
+            console.log("Going to open modal!!!!!!!!!!!!!!");
+            console.log(row)
 
             if (row && row._id) {
                 $scope.storeObj.add.model = angular.copy(row);
-                $scope.companyObj.add.model.Phone = parseInt(row.Phone);
-                $scope.companyObj.add.model.Postscode = parseInt(row.Postscode);
+                $scope.storeObj.add.model.Phone = parseInt(row.Phone);
+                $scope.storeObj.add.model.Postscode = parseInt(row.Postscode);
             }
 
             $('#storepopup').modal('show');
@@ -51,6 +67,9 @@ appModule.controller('StoreController', ['$scope', '$http', '$location', '$uibMo
                 $scope.storeObj.add.isSubmit = true;
                 return;
             }
+
+            console.log("Going to submit form!!!!!!!!!!!!!!!!!");
+            console.log($scope.storeObj.add.model);
 
             $scope.storeObj.add.isReqSent = true;
 

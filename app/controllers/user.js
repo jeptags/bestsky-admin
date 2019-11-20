@@ -5,6 +5,8 @@ var mongoose = require('mongoose');
 
 // ---- Create new user ----
 exports.register = function(req, res) {
+    console.log("Going to register account");
+    console.log(req.body);
 
     var userModel = mongoose.model('users');
 

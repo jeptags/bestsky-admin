@@ -11,8 +11,7 @@ appModule.controller('UserController', ['$scope', '$http', '$location', '$uibMod
 
         $scope.uObj.register.isSubmited = false;
         $scope.uObj.register.isReqSent = false;
-        $scope.uObj.register.submit = function(form) {   
-            console.log($scope.uObj.register.model);
+        $scope.uObj.register.submit = function(form) {
 
             if (!form.$valid) {
                 $scope.uObj.register.isSubmited = true;
@@ -23,7 +22,8 @@ appModule.controller('UserController', ['$scope', '$http', '$location', '$uibMod
             $scope.uObj.register.isSubmited = false;
             $scope.uObj.register.isReqSent = true;
 
-            $http.post('api/user/register', $scope.uObj.register.model).success(function(response) {
+            $http.post('api/user/register', $scope.uObj.register.model)
+              .success(function(response) {
                 $scope.uObj.register.isReqSent = false;
 
                 if (response.status == 1) {

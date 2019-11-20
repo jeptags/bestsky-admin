@@ -210,6 +210,20 @@ appModule.config(['$stateProvider', '$urlRouterProvider', '$locationProvider',
                 loggedin: checkLoggedIn
             }
         });
+        $stateProvider.state('batch', {
+            url: '/batch',
+            templateUrl: '/angular/views/batch.html',
+            resolve: {
+                loggedin: checkLoggedIn
+            }
+        });
+        $stateProvider.state('tag', {
+            url: '/tag',
+            templateUrl: '/angular/views/tag.html',
+            resolve: {
+                loggedin: checkLoggedIn
+            }
+        });
         $stateProvider.state('currencies', {
             url: '/currencies',
             templateUrl: '/angular/views/currencies.html',

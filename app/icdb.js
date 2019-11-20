@@ -9,6 +9,8 @@ var mongoose = require('mongoose'),
 	helperCTRL = require('./helper');
 	require('date-utils');
 
+const mysql = require('mysql');
+
 var filePath = {
 	1: __dirname + '/../../public/assets/uploads/users/'
 };
